@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Decks | RAXY LABS Story</title>
+    <meta name="description" content="Cyber Decks - Personal Computing Built for Exploration, Control, and Creativity.">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#7b2cbf',
+                        'primary-dark': '#5e2195',
+                        'accent': '#ffd700',
+                        'text-primary': '#111827',
+                        'text-secondary': '#4b5563',
+                    },
+                    fontFamily: {
+                        'space': ['"Space Grotesk"', 'sans-serif'],
+                        'sans': ['"Outfit"', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            background-color: var(--bg-body);
+        }
+    </style>
+</head>
+
+<body class="text-primary overflow-x-hidden font-sans antialiased">
+    <!-- Background Animation Canvas -->
+    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-30"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-4 px-4 transition-all duration-300" id="navbar">
+        <div class="glass-panel container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <img src="../assets/images/logo.png" alt="RAXY TECH LABS"
+                    class="h-10 w-auto object-contain transition-transform group-hover:scale-110 duration-300">
+                <span class="font-space font-bold text-xl tracking-wider hidden sm:block">RAXY<span
+                        class="text-gradient">LABS</span></span>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="../index.html"
+                    class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Home</a>
+                <a href="../about.html"
+                    class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">About</a>
+                <a href="../services.html"
+                    class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Services</a>
+                <a href="../projects.html"
+                    class="nav-link text-sm font-bold uppercase tracking-widest text-primary border-b-2 border-primary">Projects</a>
+                <a href="../contact.html"
+                    class="btn-primary text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
+                    Get in Touch
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-primary hover:text-accent transition-colors" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden glass-panel mt-2 mx-auto max-w-[95%] hidden" id="mobile-menu">
+            <div class="flex flex-col p-6 space-y-4 text-center">
+                <a href="../index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="../about.html" class="hover:text-primary transition-colors">About</a>
+                <a href="../services.html" class="hover:text-primary transition-colors">Services</a>
+                <a href="../projects.html" class="text-primary font-bold">Projects</a>
+                <a href="../contact.html" class="btn-primary w-full inline-block">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-[60vh] flex items-end pb-20 relative pt-32 overflow-hidden">
+        <!-- Decorative Blobs -->
+        <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-b from-transparent to-white/90 z-0"></div>
+        <div
+            class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -z-10 animate-pulse-slow">
+        </div>
+
+        <div class="container mx-auto px-6 z-10 relative">
+            <a href="../projects.html"
+                class="inline-flex items-center text-text-secondary hover:text-primary mb-8 transition-colors group">
+                <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i> Back to Projects
+            </a>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 font-space text-primary">Cyber Decks</h1>
+            <div class="flex flex-wrap items-center gap-4 text-sm font-mono font-bold text-accent">
+                <span class="px-3 py-1 bg-accent/10 rounded-full border border-accent/20">CONTROL</span>
+                <span class="text-gray-300">•</span>
+                <span class="px-3 py-1 bg-accent/10 rounded-full border border-accent/20">CREATIVITY</span>
+                <span class="text-gray-300">•</span>
+                <span class="px-3 py-1 bg-accent/10 rounded-full border border-accent/20">EXPLORATION</span>
+            </div>
+        </div>
+
+        <!-- Background Banner Image -->
+        <div class="absolute inset-0 -z-20">
+            <div class="absolute inset-0 -z-20">
+                <img src="../assets/images/cyber deck.jpg"
+                    class="w-full h-full object-cover opacity-20 filter grayscale hover:grayscale-0 transition-all duration-1000">
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12">
+
+                <!-- Main Content -->
+                <div class="md:col-span-2 space-y-12">
+
+                    <!-- Intro -->
+                    <div class="glass-panel p-8 md:p-12">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 border-l-4 border-accent pl-4 font-space">The
+                            Concept
+                        </h2>
+                        <p class="text-text-secondary leading-relaxed mb-6 text-lg">
+                            Cyber decks are compact, custom-built personal computing systems designed for people who
+                            want full control over their digital tools. Unlike mass-produced laptops, they are modular,
+                            purpose-driven, and built around user workflow.
+                        </p>
+                        <p class="text-text-secondary leading-relaxed text-lg">
+                            They reflect RAXY LABS’ belief in <strong class="text-primary">experimentation over
+                                consumption</strong>.
+                        </p>
+                    </div>
+
+                    <!-- Core Differentiators -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-primary pl-4 font-space">What
+                            Makes a Cyber Deck?</h2>
+                        <div class="glass-panel p-8 rounded-2xl">
+                            <ul class="grid md:grid-cols-2 gap-6 text-sm text-text-secondary">
+                                <li class="flex items-center gap-3 p-2 rounded-lg hover:bg-white/50 transition-colors">
+                                    <span class="text-accent font-bold text-lg">>></span> Rugged / Modular Form Factor
+                                </li>
+                                <li class="flex items-center gap-3 p-2 rounded-lg hover:bg-white/50 transition-colors">
+                                    <span class="text-accent font-bold text-lg">>></span> Physical Controls (Keys/Knobs)
+                                </li>
+                                <li class="flex items-center gap-3 p-2 rounded-lg hover:bg-white/50 transition-colors">
+                                    <span class="text-accent font-bold text-lg">>></span> Expandable Ports & Interfaces
+                                </li>
+                                <li class="flex items-center gap-3 p-2 rounded-lg hover:bg-white/50 transition-colors">
+                                    <span class="text-accent font-bold text-lg">>></span> Repairability & Ownership
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Use Cases -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 border-l-4 border-accent pl-4 font-space">Use
+                            Cases
+                        </h2>
+                        <div class="flex flex-wrap gap-3 text-sm text-text-secondary">
+                            <span
+                                class="glass-panel px-4 py-2 rounded-lg border border-primary/10 hover:border-accent/50 transition-colors font-semibold">Development
+                                & Coding</span>
+                            <span
+                                class="glass-panel px-4 py-2 rounded-lg border border-primary/10 hover:border-accent/50 transition-colors font-semibold">Hardware
+                                Experimentation</span>
+                            <span
+                                class="glass-panel px-4 py-2 rounded-lg border border-primary/10 hover:border-accent/50 transition-colors font-semibold">System
+                                Administration</span>
+                            <span
+                                class="glass-panel px-4 py-2 rounded-lg border border-primary/10 hover:border-accent/50 transition-colors font-semibold">Portable
+                                Research</span>
+                            <span
+                                class="glass-panel px-4 py-2 rounded-lg border border-primary/10 hover:border-accent/50 transition-colors font-semibold">Creative
+                                Work (Audio/Visuals)</span>
+                        </div>
+                    </div>
+
+                    <!-- At RAXY LABS -->
+                    <div class="glass-panel p-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-primary pl-4 font-space">
+                            Cyber Decks at RAXY LABS</h2>
+                        <p class="text-text-secondary leading-relaxed mb-4">
+                            We treat cyber decks as a future experimental initiative to explore alternative form
+                            factors.
+                        </p>
+                        <ul class="space-y-2 text-text-secondary ml-4 mb-8">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-accent"></i> Explore
+                                alternative computing</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-accent"></i> Combine
+                                hardware, software, and design</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-accent"></i> Build tools
+                                that encourage learning</li>
+                        </ul>
+                        <div class="pt-6 border-t border-gray-200/50">
+                            <blockquote
+                                class="italic text-gray-500 border-l-4 border-gray-300 pl-4 py-2 bg-gray-50/50 rounded-r-lg">
+                                "In the future, they may evolve into educational kits or specialized work tools. Today,
+                                they
+                                are a space for learning, testing, and pushing boundaries."
+                            </blockquote>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="md:col-span-1">
+                    <div class="glass-panel p-8 sticky top-32">
+                        <h3 class="text-xl font-bold mb-6 font-space text-primary">Project Details</h3>
+
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-xs text-gray-500 uppercase tracking-widest mb-1 font-bold">Type</h4>
+                                <p class="text-gray-900 font-medium">Hardware Initiative</p>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xs text-gray-500 uppercase tracking-widest mb-2 font-bold">Focus Areas
+                                </h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 bg-accent/10 text-accent text-xs font-bold rounded border border-accent/20">Hardware</span>
+                                    <span
+                                        class="px-2 py-1 bg-accent/10 text-accent text-xs font-bold rounded border border-accent/20">Maker</span>
+                                    <span
+                                        class="px-2 py-1 bg-accent/10 text-accent text-xs font-bold rounded border border-accent/20">Custom</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xs text-gray-500 uppercase tracking-widest mb-1 font-bold">Status</h4>
+                                <span class="inline-flex items-center gap-2 text-primary text-sm font-bold">
+                                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Experimental
+                                </span>
+                            </div>
+
+                            <div class="pt-6 border-t border-gray-200/50">
+                                <p class="text-xs text-gray-500 leading-relaxed">
+                                    Cyber decks represent the maker mindset at the core of the lab: Digital independence
+                                    and learning by building.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-12 bg-white/30 border-t border-gray-200/50 backdrop-blur-sm">
+        <div class="container mx-auto px-6">
+            <h3 class="text-xl font-bold mb-8 text-gray-900 font-space border-l-4 border-accent pl-4">Build Gallery
+            </h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="rounded-2xl overflow-hidden glass-panel group p-2">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="../assets/images/cyberdeck.jpg"
+                            class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden glass-panel group p-2">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="../assets/images/cyberdeck1.jpg"
+                            class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden glass-panel group p-2">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="../assets/images/cyberdeck2.jpg"
+                            class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass-panel mt-20 border-t border-gray-200/50 bg-white/50 backdrop-blur-xl">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="#"
+                        class="text-2xl font-bold font-space tracking-wider text-gray-900 flex items-center gap-2 mb-6">
+                        <img src="../assets/images/logo.png" class="h-8 w-auto opacity-80" alt="Logo">
+                        <span class="text-primary">RAXY</span><span class="text-accent">LABS</span>
+                    </a>
+                    <p class="text-text-secondary leading-relaxed max-w-sm">
+                        Engineering the future of digital interaction. We build the impossible, one line of code at a
+                        time using cutting-edge technologies.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-primary font-bold font-space uppercase tracking-widest text-sm mb-6">Quick Links
+                    </h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><a href="../index.html"
+                                class="hover:text-primary transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-accent"></i> Home</a></li>
+                        <li><a href="../about.html"
+                                class="hover:text-primary transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-accent"></i> About</a></li>
+                        <li><a href="../services.html"
+                                class="hover:text-primary transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-accent"></i> Services</a></li>
+                        <li><a href="../projects.html"
+                                class="hover:text-primary transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-accent"></i> Projects</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-primary font-bold font-space uppercase tracking-widest text-sm mb-6">Connect</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><a href="https://wa.me/256702083515"
+                                class="hover:text-accent transition-colors flex items-center gap-3"><span
+                                    class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center"><i
+                                        class="fab fa-whatsapp"></i></span> 0702 083 515</a></li>
+                        <li><a href="mailto:ibrixraxy@gmail.com"
+                                class="hover:text-accent transition-colors flex items-center gap-3"><span
+                                    class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center"><i
+                                        class="fas fa-envelope"></i></span> ibrixraxy@gmail.com</a></li>
+                    </ul>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 RAXY LABS. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAXY LABS | Defying Limits. Engineering the Future.</title>
+  <meta name="description"
+    content="RAXY LABS - A futuristic technology and creative lab defying limits and engineering the future.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary': '#7b2cbf',
+            'primary-dark': '#5e2195',
+            'accent': '#ffd700',
+            'text-primary': '#111827',
+            'text-secondary': '#4b5563',
+          },
+          fontFamily: {
+            'space': ['"Space Grotesk"', 'sans-serif'],
+            'sans': ['"Outfit"', 'sans-serif'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Ensure body background is handled by CSS */
+    body {
+      background-color: var(--bg-body);
+    }
+  </style>
+</head>
+
+<body class="text-primary overflow-x-hidden font-sans antialiased">
+
+  <!-- Background Canvas -->
+  <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-30"></canvas>
+
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 top-4 px-4 transition-all duration-300" id="navbar">
+    <div class="glass-panel container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
+      <a href="index.html" class="flex items-center gap-2 group">
+        <img src="assets/images/logo.png" alt="RAXY TECH LABS"
+          class="h-10 w-auto object-contain transition-transform group-hover:scale-110 duration-300">
+        <span class="font-space font-bold text-xl tracking-wider hidden sm:block">RAXY<span
+            class="text-gradient">LABS</span></span>
+      </a>
+
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="index.html"
+          class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Home</a>
+        <a href="about.html"
+          class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">About</a>
+        <a href="services.html"
+          class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Services</a>
+        <a href="projects.html"
+          class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Projects</a>
+        <a href="contact.html"
+          class="btn-primary text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-2xl text-primary hover:text-accent transition-colors" id="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden glass-panel mt-2 mx-auto max-w-[95%] hidden" id="mobile-menu">
+      <div class="flex flex-col p-6 space-y-4 text-center">
+        <a href="index.html" class="text-primary font-bold">Home</a>
+        <a href="about.html" class="hover:text-primary transition-colors">About</a>
+        <a href="services.html" class="hover:text-primary transition-colors">Services</a>
+        <a href="projects.html" class="hover:text-primary transition-colors">Projects</a>
+        <a href="contact.html" class="btn-primary w-full inline-block">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center relative pt-32 pb-20">
+    <!-- Decorative Blobs -->
+    <div class="absolute top-20 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -z-10 animate-pulse-slow">
+    </div>
+    <div
+      class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] -z-10 animate-pulse-slow options-delay-[2s]">
+    </div>
+
+    <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="text-center lg:text-left z-10" data-aos="fade-right">
+        <div class="inline-block px-4 py-2 bg-white/50 backdrop-blur-sm rounded-full border border-primary/10 mb-6">
+          <span class="text-primary font-space text-xs font-bold uppercase tracking-[0.2em]">Future Ready
+            Technology</span>
+        </div>
+
+        <h1 class="text-5xl lg:text-7xl font-bold mb-8 leading-tight font-space">
+          Defying <span class="text-gradient">Limits.</span><br>
+          Engineering <span class="relative inline-block">
+            Future.
+            <svg class="absolute w-full h-3 -bottom-1 left-0 text-accent opacity-60" viewBox="0 0 200 9" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.00025 6.99997C25.7509 2.19998 73.2444 2.19989 97.466 2.14304C108.665 2.11674 122.996 1.83952 133.585 2.92318C154.218 5.03487 186.273 6.99997 197.98 6.99997"
+                stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+            </svg>
+          </span>
+        </h1>
+
+        <p class="text-text-secondary text-lg mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+          RAXY LABS is a futuristic technology lab focused on building systems, platforms, and experimental tech. We
+          combine software, infrastructure, and creativity to solve real problems.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a href="projects.html" class="btn-primary text-center">
+            View Our Work
+          </a>
+          <a href="contact.html"
+            class="px-8 py-3 bg-white border border-gray-200 text-gray-700 font-semibold rounded-full hover:border-primary hover:text-primary hover:shadow-lg transition-all duration-300 text-center flex items-center justify-center gap-2">
+            Start a Project <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="mt-16 grid grid-cols-3 gap-8 border-t border-gray-100 pt-8">
+          <div>
+            <h3 class="text-3xl font-bold font-space text-primary">50+</h3>
+            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Projects</p>
+          </div>
+          <div>
+            <h3 class="text-3xl font-bold font-space text-primary">99%</h3>
+            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Satisfaction</p>
+          </div>
+          <div>
+            <h3 class="text-3xl font-bold font-space text-primary">24/7</h3>
+            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Support</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual -->
+      <div class="relative h-[400px] lg:h-[600px] flex items-center justify-center" data-aos="fade-left">
+        <!-- Abstract Circles -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-[300px] h-[300px] border border-primary/20 rounded-full animate-[spin_10s_linear_infinite]">
+          </div>
+          <div
+            class="absolute w-[450px] h-[450px] border border-accent/20 rounded-full animate-[spin_15s_linear_infinite_reverse]">
+          </div>
+        </div>
+
+        <div
+          class="glass-panel p-8 relative z-10 w-full max-w-md animate-float transform rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
+          <div class="flex justify-between items-center mb-6 border-b border-gray-100 pb-4">
+            <div class="flex gap-2">
+              <div class="h-3 w-3 rounded-full bg-red-400"></div>
+              <div class="h-3 w-3 rounded-full bg-yellow-400"></div>
+              <div class="h-3 w-3 rounded-full bg-green-400"></div>
+            </div>
+            <div class="text-xs font-mono text-gray-400">RAXY_OS v2.0</div>
+          </div>
+
+          <div class="space-y-4 font-mono text-sm text-gray-600">
+            <div class="flex items-center gap-2">
+              <span class="text-green-500">➜</span>
+              <span>Initializing Core Systems...</span>
+            </div>
+            <div class="flex items-center gap-2 pl-4">
+              <span class="text-gray-400">↳</span>
+              <span class="text-primary font-bold">Design_Engine: LOADED</span>
+            </div>
+            <div class="flex items-center gap-2 pl-4">
+              <span class="text-gray-400">↳</span>
+              <span class="text-accent font-bold">UX_Protocol: ACTIVE</span>
+            </div>
+
+            <div class="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-100 text-xs text-gray-500">
+              <code>
+                const <span class="text-primary">future</span> = new <span class="text-accent">RaxyLab()</span>;<br>
+                future.engineer(<span class="text-green-600">'limitless'</span>);
+              </code>
+            </div>
+
+            <div class="mt-4">
+              <div class="flex justify-between text-xs mb-1">
+                <span>System Load</span>
+                <span class="text-primary">100%</span>
+              </div>
+              <div class="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-primary to-accent w-full animate-pulse"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="glass-panel mt-20 border-t border-gray-200/50 bg-white/50 backdrop-blur-xl">
+    <div class="container mx-auto px-6 py-12">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div class="col-span-1 md:col-span-2">
+          <a href="#" class="text-2xl font-bold font-space tracking-wider text-gray-900 flex items-center gap-2 mb-6">
+            <img src="assets/images/logo.png" class="h-8 w-auto opacity-80" alt="Logo">
+            <span class="text-primary">RAXY</span><span class="text-accent">LABS</span>
+          </a>
+          <p class="text-text-secondary leading-relaxed max-w-sm">
+            Engineering the future of digital interaction. We build the impossible, one line of code at a time using
+            cutting-edge technologies.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-primary font-bold font-space uppercase tracking-widest text-sm mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-gray-600">
+            <li><a href="index.html" class="hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fas fa-chevron-right text-xs text-accent"></i> Home</a></li>
+            <li><a href="about.html" class="hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fas fa-chevron-right text-xs text-accent"></i> About</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fas fa-chevron-right text-xs text-accent"></i> Services</a></li>
+            <li><a href="projects.html" class="hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fas fa-chevron-right text-xs text-accent"></i> Projects</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-primary font-bold font-space uppercase tracking-widest text-sm mb-6">Connect</h4>
+          <ul class="space-y-3 text-gray-600">
+            <li><a href="https://wa.me/256702083515"
+                class="hover:text-accent transition-colors flex items-center gap-3"><span
+                  class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center"><i
+                    class="fab fa-whatsapp"></i></span> 0702 083 515</a></li>
+            <li><a href="mailto:ibrixraxy@gmail.com"
+                class="hover:text-accent transition-colors flex items-center gap-3"><span
+                  class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center"><i
+                    class="fas fa-envelope"></i></span> ibrixraxy@gmail.com</a></li>
+          </ul>
+          <div class="flex gap-4 mt-6">
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+                class="fab fa-twitter"></i></a>
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+                class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <p>&copy; 2026 RAXY LABS. All rights reserved.</p>
+        <div class="flex gap-6 mt-4 md:mt-0">
+          <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

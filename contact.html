@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | RAXY LABS</title>
+    <meta name="description"
+        content="Contact RAXY LABS - Let's build something extraordinary together. Send us a transmission.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#7b2cbf',
+                        'primary-dark': '#5e2195',
+                        'accent': '#ffd700',
+                        'text-primary': '#111827',
+                        'text-secondary': '#4b5563',
+                    },
+                    fontFamily: {
+                        'space': ['"Space Grotesk"', 'sans-serif'],
+                        'sans': ['"Outfit"', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: var(--bg-body);
+        }
+    </style>
+</head>
+
+<body class="text-primary overflow-x-hidden font-sans antialiased">
+
+    <!-- Background Animation Canvas -->
+    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-30"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-4 px-4 transition-all duration-300" id="navbar">
+        <div class="glass-panel container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/images/logo.png" alt="RAXY TECH LABS"
+                    class="h-10 w-auto object-contain transition-transform group-hover:scale-110 duration-300">
+                <span class="font-space font-bold text-xl tracking-wider hidden sm:block">RAXY<span
+                        class="text-gradient">LABS</span></span>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html"
+                    class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Home</a>
+                <a href="about.html"
+                    class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">About</a>
+                <a href="services.html"
+                    class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Services</a>
+                <a href="projects.html"
+                    class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Projects</a>
+                <a href="contact.html"
+                    class="btn-primary text-sm shadow-lg transform translate-y-[-1px] ring-2 ring-white ring-opacity-20">
+                    Get in Touch
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-primary hover:text-accent transition-colors" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden glass-panel mt-2 mx-auto max-w-[95%] hidden" id="mobile-menu">
+            <div class="flex flex-col p-6 space-y-4 text-center">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="about.html" class="hover:text-primary transition-colors">About</a>
+                <a href="services.html" class="hover:text-primary transition-colors">Services</a>
+                <a href="projects.html" class="hover:text-primary transition-colors">Projects</a>
+                <a href="contact.html" class="btn-primary w-full inline-block">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Content -->
+    <section class="min-h-screen flex items-center justify-center relative py-20 pt-32">
+        <!-- Decorative Blobs -->
+        <div class="absolute top-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -z-10 animate-pulse-slow">
+        </div>
+        <div
+            class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] -z-10 animate-pulse-slow">
+        </div>
+
+        <div class="container mx-auto px-6 pt-10">
+            <div
+                class="max-w-4xl mx-auto glass-panel rounded-3xl p-8 md:p-12 border border-white/50 shadow-2xl relative overflow-hidden">
+
+                <!-- Glow Line -->
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50">
+                </div>
+
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4 font-space">Ready to <span
+                            class="text-gradient">Launch?</span></h2>
+                    <p class="text-text-secondary mb-8 text-lg">Let's build something extraordinary together. Send us a
+                        transmission.</p>
+
+                    <div class="flex flex-col md:flex-row justify-center gap-8 mb-8 pb-8 border-b border-gray-100">
+                        <div
+                            class="flex items-center gap-3 justify-center group bg-white/50 px-6 py-3 rounded-xl hover:bg-white transition-colors">
+                            <i class="fas fa-phone text-primary group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-900 font-bold">0702 083 515</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 justify-center group bg-white/50 px-6 py-3 rounded-xl hover:bg-white transition-colors">
+                            <i class="fas fa-envelope text-accent group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-900 font-bold">ibrixraxy@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="contact-form" action="https://formspree.io/f/mblnyrqo" method="POST" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label
+                                class="text-xs font-mono text-primary font-bold uppercase tracking-wider">Name</label>
+                            <input type="text" name="name" required
+                                class="w-full bg-white/60 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder-gray-400"
+                                placeholder="John Doe">
+                        </div>
+                        <div class="space-y-2">
+                            <label
+                                class="text-xs font-mono text-primary font-bold uppercase tracking-wider">Email</label>
+                            <input type="email" name="email" required
+                                class="w-full bg-white/60 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder-gray-400"
+                                placeholder="john@example.com">
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-mono text-primary font-bold uppercase tracking-wider">Message</label>
+                        <textarea rows="4" name="message" required
+                            class="w-full bg-white/60 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder-gray-400"
+                            placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn"
+                        class="w-full btn-primary text-center font-bold text-lg hover:shadow-xl transform hover:-translate-y-1 mt-4">
+                        Send Transmission
+                    </button>
+                    <p id="form-status" class="text-center font-bold mt-4 hidden"></p>
+                </form>
+
+                <script>
+                    var form = document.getElementById("contact-form");
+                    var status = document.getElementById("form-status");
+                    var submitBtn = document.getElementById("submit-btn");
+
+                    async function handleSubmit(event) {
+                        event.preventDefault();
+                        var data = new FormData(event.target);
+                        submitBtn.disabled = true;
+                        // Loading indicator removed as requested
+
+                        fetch(event.target.action, {
+                            method: form.method,
+                            body: data,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        }).then(response => {
+                            if (response.ok) {
+                                status.innerHTML = "Done";
+                                status.classList.remove('hidden');
+                                status.classList.remove('text-red-600');
+                                status.classList.add('text-green-600');
+                                form.reset();
+                                submitBtn.innerHTML = "Done";
+                                submitBtn.disabled = false;
+                                setTimeout(() => {
+                                    status.classList.add('hidden');
+                                    submitBtn.innerHTML = "Send Transmission";
+                                }, 3000);
+                            } else {
+                                response.json().then(data => {
+                                    if (data.errors) {
+                                        status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                                    } else {
+                                        status.innerHTML = "Oops! There was a problem submitting your form"
+                                    }
+                                    status.classList.remove('hidden');
+                                    status.classList.add('text-red-600');
+                                    submitBtn.innerHTML = "Send Transmission";
+                                    submitBtn.disabled = false;
+                                }).catch(e => {
+                                    status.innerHTML = "Oops! An error occurred."
+                                    status.classList.remove('hidden');
+                                    status.classList.add('text-red-600');
+                                    submitBtn.innerHTML = "Send Transmission";
+                                    submitBtn.disabled = false;
+                                });
+                            }
+                        }).catch(error => {
+                            status.innerHTML = "Oops! Check your internet connection."
+                            status.classList.remove('hidden');
+                            status.classList.add('text-red-600');
+                            submitBtn.innerHTML = "Send Transmission";
+                            submitBtn.disabled = false;
+                        });
+                    }
+                    form.addEventListener("submit", handleSubmit)
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass-panel mt-20 border-t border-gray-200/50 bg-white/50 backdrop-blur-xl">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="#"
+                        class="text-2xl font-bold font-space tracking-wider text-gray-900 flex items-center gap-2 mb-6">
+                        <img src="assets/images/logo.png" class="h-8 w-auto opacity-80" alt="Logo">
+                        <span class="text-primary">RAXY</span><span class="text-accent">LABS</span>
+                    </a>
+                    <p class="text-text-secondary leading-relaxed max-w-sm">
+                        Engineering the future of digital interaction. We build the impossible, one line of code at a
+                        time using cutting-edge technologies.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-primary font-bold font-space uppercase tracking-widest text-sm mb-6">Quick Links
+                    </h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><a href="index.html" class="hover:text-primary transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-accent"></i> Home</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-accent"></i> About</a></li>
+                        <li><a href="services.html"
+                                class="hover:text-primary transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-accent"></i> Services</a></li>
+                        <li><a href="projects.html"
+                                class="hover:text-primary transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-accent"></i> Projects</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-primary font-bold font-space uppercase tracking-widest text-sm mb-6">Connect</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><a href="https://wa.me/256702083515"
+                                class="hover:text-accent transition-colors flex items-center gap-3"><span
+                                    class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center"><i
+                                        class="fab fa-whatsapp"></i></span> 0702 083 515</a></li>
+                        <li><a href="mailto:ibrixraxy@gmail.com"
+                                class="hover:text-accent transition-colors flex items-center gap-3"><span
+                                    class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center"><i
+                                        class="fas fa-envelope"></i></span> ibrixraxy@gmail.com</a></li>
+                    </ul>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 RAXY LABS. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

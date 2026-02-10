@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Platform | RAXY LABS Story</title>
+    <meta name="description" content="Islamic Platform - A Digital Space for Knowledge, Community, and Daily Practice.">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#7b2cbf',
+                        'primary-dark': '#5e2195',
+                        'accent': '#ffd700',
+                        'text-primary': '#111827',
+                        'text-secondary': '#4b5563',
+                    },
+                    fontFamily: {
+                        'space': ['"Space Grotesk"', 'sans-serif'],
+                        'sans': ['"Outfit"', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            background-color: var(--bg-body);
+        }
+    </style>
+</head>
+
+<body class="text-primary overflow-x-hidden font-sans antialiased">
+    <!-- Background Animation Canvas -->
+    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-30"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-4 px-4 transition-all duration-300" id="navbar">
+        <div class="glass-panel container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <img src="../assets/images/logo.png" alt="RAXY TECH LABS"
+                    class="h-10 w-auto object-contain transition-transform group-hover:scale-110 duration-300">
+                <span class="font-space font-bold text-xl tracking-wider hidden sm:block">RAXY<span
+                        class="text-gradient">LABS</span></span>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="../index.html"
+                    class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Home</a>
+                <a href="../about.html"
+                    class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">About</a>
+                <a href="../services.html"
+                    class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Services</a>
+                <a href="../projects.html"
+                    class="nav-link text-sm font-bold uppercase tracking-widest text-primary border-b-2 border-primary">Projects</a>
+                <a href="../contact.html"
+                    class="btn-primary text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
+                    Get in Touch
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-primary hover:text-accent transition-colors" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden glass-panel mt-2 mx-auto max-w-[95%] hidden" id="mobile-menu">
+            <div class="flex flex-col p-6 space-y-4 text-center">
+                <a href="../index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="../about.html" class="hover:text-primary transition-colors">About</a>
+                <a href="../services.html" class="hover:text-primary transition-colors">Services</a>
+                <a href="../projects.html" class="text-primary font-bold">Projects</a>
+                <a href="../contact.html" class="btn-primary w-full inline-block">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-[60vh] flex items-end pb-20 relative pt-32 overflow-hidden">
+        <!-- Decorative Blobs -->
+        <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-b from-transparent to-white/90 z-0"></div>
+        <div
+            class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -z-10 animate-pulse-slow">
+        </div>
+
+        <div class="container mx-auto px-6 z-10 relative">
+            <a href="../projects.html"
+                class="inline-flex items-center text-text-secondary hover:text-primary mb-8 transition-colors group">
+                <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i> Back to Projects
+            </a>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 font-space text-primary">Islamic Platform</h1>
+            <div class="flex flex-wrap items-center gap-4 text-sm font-mono font-bold text-accent">
+                <span class="px-3 py-1 bg-accent/10 rounded-full border border-accent/20">FAITH</span>
+                <span class="text-gray-300">•</span>
+                <span class="px-3 py-1 bg-accent/10 rounded-full border border-accent/20">COMMUNITY</span>
+                <span class="text-gray-300">•</span>
+                <span class="px-3 py-1 bg-accent/10 rounded-full border border-accent/20">KNOWLEDGE</span>
+            </div>
+        </div>
+
+        <!-- Background Banner Image -->
+        <div class="absolute inset-0 -z-20">
+            <img src="../assets/images/islamic platform.jpg"
+                class="w-full h-full object-cover opacity-20 filter grayscale hover:grayscale-0 transition-all duration-1000">
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12">
+
+                <!-- Main Content -->
+                <div class="md:col-span-2 space-y-12">
+
+                    <!-- Intro -->
+                    <div class="glass-panel p-8 md:p-12">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 border-l-4 border-accent pl-4 font-space">The
+                            Concept</h2>
+                        <p class="text-text-secondary leading-relaxed mb-6 text-lg">
+                            The Islamic Platform is a planned digital space bringing together education, community, and
+                            daily guidance into one calm and purposeful experience.
+                        </p>
+                        <p class="text-text-secondary leading-relaxed text-lg">
+                            Designed to simplify scattered resources, it supports everyday Muslim life through
+                            technology—<strong class="text-primary">without noise, ads, or distraction</strong>.
+                        </p>
+                    </div>
+
+                    <!-- Core Features Grid -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-primary pl-4 font-space">Core
+                            Essentials
+                        </h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+
+                            <!-- Feature Cards -->
+                            <div
+                                class="bg-white/60 p-6 rounded-2xl border border-primary/10 hover:border-accent/50 transition-colors shadow-sm">
+                                <h4 class="text-primary font-bold mb-2 font-space">🕌 1. Focused Home</h4>
+                                <p class="text-sm text-text-secondary">A peaceful entry point with prayer times, daily
+                                    reminders, and important announcements to encourage intention.</p>
+                            </div>
+
+                            <div
+                                class="bg-white/60 p-6 rounded-2xl border border-primary/10 hover:border-accent/50 transition-colors shadow-sm">
+                                <h4 class="text-primary font-bold mb-2 font-space">📖 2. Knowledge Hub</h4>
+                                <p class="text-sm text-text-secondary">Structured lessons, from core topics to advanced
+                                    paths.
+                                    Content presented clearly and respectfully.</p>
+                            </div>
+
+                            <div
+                                class="bg-white/60 p-6 rounded-2xl border border-primary/10 hover:border-accent/50 transition-colors shadow-sm">
+                                <h4 class="text-primary font-bold mb-2 font-space">🤝 3. Community Spaces</h4>
+                                <p class="text-sm text-text-secondary">Moderated discussion spaces and local groups to
+                                    encourage learning, support, and positive interaction.</p>
+                            </div>
+
+                            <div
+                                class="bg-white/60 p-6 rounded-2xl border border-primary/10 hover:border-accent/50 transition-colors shadow-sm">
+                                <h4 class="text-primary font-bold mb-2 font-space">🤲 4. Daily Practice</h4>
+                                <p class="text-sm text-text-secondary">Assistance with prayer times, Duas, Qur’an
+                                    reading, and
+                                    habit-building for consistency.</p>
+                            </div>
+
+                            <div
+                                class="bg-white/60 p-6 rounded-2xl border border-primary/10 hover:border-accent/50 transition-colors shadow-sm">
+                                <h4 class="text-primary font-bold mb-2 font-space">🔍 5. Discovery</h4>
+                                <p class="text-sm text-text-secondary">Explore new topics and speakers. Designed to
+                                    inspire,
+                                    not distract.</p>
+                            </div>
+
+                            <div
+                                class="bg-white/60 p-6 rounded-2xl border border-primary/10 hover:border-accent/50 transition-colors shadow-sm">
+                                <h4 class="text-primary font-bold mb-2 font-space">🛡️ 6. Safety & Trust</h4>
+                                <p class="text-sm text-text-secondary">Prioritizing moderation, respectful dialogue, and
+                                    authentic content in an ad-free environment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vision -->
+                    <div class="glass-panel p-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-accent pl-4 font-space">
+                            Vision</h2>
+                        <p class="text-text-secondary leading-relaxed mb-6">
+                            The long-term vision is to grow into a trusted digital companion for Muslims—a global hub
+                            that supports faith with dignity and clarity.
+                        </p>
+                        <blockquote
+                            class="italic text-gray-500 border-l-4 border-gray-300 pl-4 py-2 bg-gray-50/50 rounded-r-lg">
+                            "A digital platform designed to support Islamic learning, daily practice, and community in a
+                            calm, respectful, and modern way."
+                        </blockquote>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="md:col-span-1">
+                    <div class="glass-panel p-8 sticky top-32">
+                        <h3 class="text-xl font-bold mb-6 font-space text-primary">Project Details</h3>
+
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-xs text-gray-500 uppercase tracking-widest mb-1 font-bold">Type</h4>
+                                <p class="text-gray-900 font-medium">Platform Concept</p>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xs text-gray-500 uppercase tracking-widest mb-2 font-bold">Focus Areas
+                                </h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 bg-accent/10 text-accent text-xs font-bold rounded border border-accent/20">Faith</span>
+                                    <span
+                                        class="px-2 py-1 bg-accent/10 text-accent text-xs font-bold rounded border border-accent/20">EdTech</span>
+                                    <span
+                                        class="px-2 py-1 bg-accent/10 text-accent text-xs font-bold rounded border border-accent/20">Community</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xs text-gray-500 uppercase tracking-widest mb-1 font-bold">Status</h4>
+                                <span class="inline-flex items-center gap-2 text-accent text-sm font-bold">
+                                    <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span> Planned
+                                </span>
+                            </div>
+
+                            <div class="pt-6 border-t border-gray-200/50">
+                                <p class="text-xs text-gray-500 leading-relaxed">
+                                    This platform exists to support modern Muslim lifestyles while preserving
+                                    authenticity and embracing technology.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass-panel mt-20 border-t border-gray-200/50 bg-white/50 backdrop-blur-xl">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="#"
+                        class="text-2xl font-bold font-space tracking-wider text-gray-900 flex items-center gap-2 mb-6">
+                        <img src="../assets/images/logo.png" class="h-8 w-auto opacity-80" alt="Logo">
+                        <span class="text-primary">RAXY</span><span class="text-accent">LABS</span>
+                    </a>
+                    <p class="text-text-secondary leading-relaxed max-w-sm">
+                        Engineering the future of digital interaction. We build the impossible, one line of code at a
+                        time using cutting-edge technologies.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-primary font-bold font-space uppercase tracking-widest text-sm mb-6">Quick Links
+                    </h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><a href="../index.html"
+                                class="hover:text-primary transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-accent"></i> Home</a></li>
+                        <li><a href="../about.html"
+                                class="hover:text-primary transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-accent"></i> About</a></li>
+                        <li><a href="../services.html"
+                                class="hover:text-primary transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-accent"></i> Services</a></li>
+                        <li><a href="../projects.html"
+                                class="hover:text-primary transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-accent"></i> Projects</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-primary font-bold font-space uppercase tracking-widest text-sm mb-6">Connect</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><a href="https://wa.me/256702083515"
+                                class="hover:text-accent transition-colors flex items-center gap-3"><span
+                                    class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center"><i
+                                        class="fab fa-whatsapp"></i></span> 0702 083 515</a></li>
+                        <li><a href="mailto:ibrixraxy@gmail.com"
+                                class="hover:text-accent transition-colors flex items-center gap-3"><span
+                                    class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center"><i
+                                        class="fas fa-envelope"></i></span> ibrixraxy@gmail.com</a></li>
+                    </ul>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 RAXY LABS. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
