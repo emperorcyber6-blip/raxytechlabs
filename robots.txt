@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://emperorcyber6-blip.github.io/raxytechlabs/sitemap.xml
