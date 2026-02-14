@@ -10,7 +10,7 @@
     <meta property="og:site_name" content="Raxy Tech Labs" />
     <meta property="og:title" content="About Raxy Tech Labs – Software & Digital Solutions Agency" />
     <meta property="og:type" content="website" />
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,11 +29,13 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary': '#7b2cbf',
-                        'primary-dark': '#5e2195',
-                        'accent': '#ffd700',
-                        'text-primary': '#111827',
-                        'text-secondary': '#4b5563',
+                        'primary': '#0f2547',
+                        'primary-dark': '#091a33',
+                        'primary-light': '#1a3a6b',
+                        'accent-glow': 'rgba(0, 180, 216, 0.5)',
+                        'accent': '#00b4d8',
+                        'text-primary': '#e8edf5',
+                        'text-secondary': '#8b9dc3',
                     },
                     fontFamily: {
                         'space': ['"Space Grotesk"', 'sans-serif'],
@@ -56,14 +58,10 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        body {
-            background-color: var(--bg-body);
-        }
-    </style>
+
 </head>
 
-<body class="text-primary overflow-x-hidden font-sans antialiased">
+<body class="text-text-primary overflow-x-hidden font-sans antialiased">
     <!-- Background Animation Canvas -->
     <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-30"></canvas>
 
@@ -73,19 +71,19 @@
             <a href="index.html" class="flex items-center gap-2 group">
                 <img src="assets/images/logo.png" alt="RAXY TECH LABS"
                     class="h-10 w-auto object-contain transition-transform group-hover:scale-110 duration-300">
-                <span class="font-space font-bold text-xl tracking-wider hidden sm:block">RAXY<span
+                <span class="font-space font-bold text-xl tracking-wider hidden sm:block text-white">RAXY<span
                         class="text-gradient">LABS</span></span>
             </a>
 
             <div class="hidden md:flex items-center space-x-8">
                 <a href="index.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Home</a>
+                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Home</a>
                 <a href="about.html"
-                    class="nav-link text-sm font-bold uppercase tracking-widest text-primary border-b-2 border-primary">About</a>
+                    class="nav-link text-sm font-bold uppercase tracking-widest text-accent border-b-2 border-accent">About</a>
                 <a href="services.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Services</a>
+                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Services</a>
                 <a href="projects.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Projects</a>
+                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Projects</a>
                 <a href="contact.html"
                     class="btn-primary text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
                     Get in Touch
@@ -93,7 +91,7 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button class="md:hidden text-2xl text-primary hover:text-accent transition-colors" id="mobile-menu-btn">
+            <button class="md:hidden text-2xl text-accent hover:text-white transition-colors" id="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -101,10 +99,10 @@
         <!-- Mobile Menu -->
         <div class="md:hidden glass-panel mt-2 mx-auto max-w-[95%] hidden" id="mobile-menu">
             <div class="flex flex-col p-6 space-y-4 text-center">
-                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
-                <a href="about.html" class="text-primary font-bold">About</a>
-                <a href="services.html" class="hover:text-primary transition-colors">Services</a>
-                <a href="projects.html" class="hover:text-primary transition-colors">Projects</a>
+                <a href="index.html" class="text-gray-300 hover:text-accent transition-colors">Home</a>
+                <a href="about.html" class="text-accent font-bold">About</a>
+                <a href="services.html" class="text-gray-300 hover:text-accent transition-colors">Services</a>
+                <a href="projects.html" class="text-gray-300 hover:text-accent transition-colors">Projects</a>
                 <a href="contact.html" class="btn-primary w-full inline-block">Contact Us</a>
             </div>
         </div>
@@ -114,15 +112,15 @@
     <section class="min-h-[50vh] flex items-center justify-center relative pt-32 pb-10">
         <!-- Decorative Blobs -->
         <div
-            class="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -z-10 animate-pulse-slow">
+            class="absolute top-1/2 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[100px] -z-10 animate-pulse-slow">
         </div>
         <div
             class="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-accent/10 rounded-full blur-[80px] -z-10 animate-pulse-slow">
         </div>
 
         <div class="container mx-auto px-6 text-center z-10" data-aos="fade-up">
-            <div class="inline-block px-4 py-2 bg-white/50 backdrop-blur-sm rounded-full border border-primary/10 mb-6">
-                <h2 class="text-primary font-space text-xs font-bold uppercase tracking-[0.3em]">Behind the Code</h2>
+            <div class="inline-block px-4 py-2 bg-accent/100 backdrop-blur-sm rounded-full border border-accent/20 mb-6">
+                <h2 class="text-accent font-space text-xs font-bold uppercase tracking-[0.3em]">Behind the Code</h2>
             </div>
             <h1 class="text-5xl md:text-7xl font-bold mb-6 font-space">Who We Are</h1>
             <p class="text-text-secondary max-w-2xl mx-auto text-lg">
@@ -135,15 +133,15 @@
     <!-- About Content -->
     <section class="py-20 relative">
         <div class="container mx-auto px-6">
-            <div class="glass-panel p-10 md:p-16 rounded-3xl border border-gray-100 relative overflow-hidden shadow-xl">
+            <div class="glass-panel p-10 md:p-16 rounded-3xl border border-accent/10 relative overflow-hidden shadow-xl">
                 <!-- Inner Glow -->
-                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px]"></div>
+                <div class="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-[80px]"></div>
 
                 <div class="mb-16">
                     <h3 class="text-2xl text-primary font-bold mb-8 font-space border-l-4 border-accent pl-4">THE RAXY
                         LABS STORY</h3>
 
-                    <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                    <p class="text-gray-300 leading-relaxed mb-6 text-lg">
                         <strong class="text-primary">RAXY TECH LABS</strong>, a rising African tech startup and software
                         agency, was born in
                         Kampala from curiosity, not capital.
@@ -164,7 +162,7 @@
 
                     <div class="grid md:grid-cols-2 gap-8 mb-10">
                         <div
-                            class="bg-white/60 p-6 rounded-xl border border-primary/10 hover:border-primary/30 transition-colors">
+                            class="bg-white/60 p-6 rounded-xl border border-primary/10 hover:border-accent/30 transition-colors">
                             <h5 class="text-primary font-bold mb-4 font-space flex items-center gap-2"><i
                                     class="fas fa-check-circle text-accent"></i> Real Problems, Real Solutions</h5>
                             <ul class="space-y-3 text-text-secondary text-sm">
@@ -177,7 +175,7 @@
                             </ul>
                         </div>
                         <div
-                            class="bg-white/60 p-6 rounded-xl border border-primary/10 hover:border-primary/30 transition-colors">
+                            class="bg-white/60 p-6 rounded-xl border border-primary/10 hover:border-accent/30 transition-colors">
                             <h5 class="text-primary font-bold mb-4 font-space flex items-center gap-2"><i
                                     class="fas fa-flask text-accent"></i> Our Experimentation</h5>
                             <ul class="space-y-3 text-text-secondary text-sm">
@@ -206,13 +204,13 @@
                     </ul>
 
                     <div
-                        class="border-l-4 border-accent pl-6 py-2 italic text-gray-500 mb-12 bg-gray-50/50 rounded-r-lg">
+                        class="border-l-4 border-accent pl-6 py-2 italic text-text-secondary mb-12 bg-primary-dark/40 rounded-r-lg">
                         "RAXY LABS is still early — and that’s intentional. Because this is not the end product.
                         This is the beginning of something being engineered for the long term."
                     </div>
 
                     <p
-                        class="text-center text-primary text-lg font-space mb-8 bg-white/40 p-6 rounded-2xl border border-primary/5">
+                        class="text-center text-primary text-lg font-space mb-8 bg-primary/40 p-6 rounded-2xl border border-primary/5">
                         The agency operates under one identity, powered by three forces:<br>
                         <span class="text-primary font-bold">RAXY</span> • <span
                             class="text-primary-light font-bold">MUHOOZI</span> • <span
@@ -225,28 +223,28 @@
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Executive 1: RAXY -->
                     <button data-modal="raxy-modal"
-                        class="p-6 bg-white/70 rounded-2xl border border-primary/10 text-center hover:border-primary transition-all duration-300 group block hover:-translate-y-2 relative w-full shadow-sm hover:shadow-xl">
+                        class="p-6 bg-primary/40 rounded-2xl border border-accent/10 text-center hover:border-primary transition-all duration-300 group block hover:-translate-y-2 relative w-full shadow-sm hover:shadow-xl">
                         <div
                             class="h-32 w-32 mx-auto rounded-full overflow-hidden border-2 border-primary mb-4 shadow-[0_0_15px_rgba(123,44,191,0.2)]">
                             <img src="assets/images/Raxy.JPG" alt="Raxy" class="w-full h-full object-cover">
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">
+                        <h3 class="text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors">
                             MULINDWA IBRAHIM</h3>
                         <p class="text-xs text-accent uppercase tracking-widest mb-2 font-bold">Founder (RAXY)</p>
-                        <p class="text-[10px] text-gray-500 line-clamp-2 px-2">
+                        <p class="text-[10px] text-text-secondary line-clamp-2 px-2">
                             A technologist building systems, platforms, and experimental tech with a long-term vision.
                         </p>
                     </button>
 
                     <!-- Executive 2: ROAN -->
                     <button data-modal="roan-modal"
-                        class="p-6 bg-white/70 rounded-2xl border border-primary/10 text-center hover:border-primary-light transition-all duration-300 group w-full shadow-sm hover:shadow-xl hover:-translate-y-2">
+                        class="p-6 bg-primary/40 rounded-2xl border border-accent/10 text-center hover:border-primary-light transition-all duration-300 group w-full shadow-sm hover:shadow-xl hover:-translate-y-2">
                         <div
                             class="h-32 w-32 mx-auto rounded-full overflow-hidden border-2 border-primary-light mb-4 shadow-[0_0_15px_rgba(157,78,221,0.2)]">
                             <img src="assets/images/Roan.jpg" alt="Roan" class="w-full h-full object-cover">
                         </div>
                         <h3
-                            class="text-xl font-bold text-gray-900 mb-1 group-hover:text-primary-light transition-colors">
+                            class="text-xl font-bold text-white mb-1 group-hover:text-primary-light transition-colors">
                             MUHOOZI ERIC
                         </h3>
                         <p class="text-xs text-primary-light uppercase tracking-widest font-bold">Executive (ROAN)</p>
@@ -254,12 +252,12 @@
 
                     <!-- Executive 3: HIVE -->
                     <button data-modal="hive-modal"
-                        class="p-6 bg-white/70 rounded-2xl border border-primary/10 text-center hover:border-accent transition-all duration-300 group w-full shadow-sm hover:shadow-xl hover:-translate-y-2">
+                        class="p-6 bg-primary/40 rounded-2xl border border-accent/10 text-center hover:border-accent transition-all duration-300 group w-full shadow-sm hover:shadow-xl hover:-translate-y-2">
                         <div
                             class="h-32 w-32 mx-auto rounded-full bg-gradient-to-br from-gray-800 to-black flex items-center justify-center border-2 border-accent mb-4 shadow-[0_0_15px_rgba(255,215,0,0.2)]">
                             <span class="font-space font-bold text-2xl text-white">H</span>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-1 group-hover:text-accent transition-colors">
+                        <h3 class="text-xl font-bold text-white mb-1 group-hover:text-accent transition-colors">
                             NJUKI JOSEPH
                         </h3>
                         <p class="text-xs text-accent uppercase tracking-widest font-bold">Executive (HIVE)</p>
@@ -270,14 +268,14 @@
     </section>
 
     <!-- Footer -->
-    <footer class="glass-panel mt-20 border-t border-gray-200/50 bg-white/50 backdrop-blur-xl">
+    <footer class="glass-panel mt-20 border-t border-accent/10">
         <div class="container mx-auto px-6 py-12">
             <div class="grid md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-2">
                     <a href="#"
-                        class="text-2xl font-bold font-space tracking-wider text-gray-900 flex items-center gap-2 mb-6">
+                        class="text-2xl font-bold font-space tracking-wider text-white flex items-center gap-2 mb-6">
                         <img src="assets/images/logo.png" class="h-8 w-auto opacity-80" alt="Logo">
-                        <span class="text-primary">RAXY</span><span class="text-accent">LABS</span>
+                        <span class="text-accent">RAXY</span><span class="text-cyan-300">LABS</span>
                     </a>
                     <p class="text-text-secondary leading-relaxed max-w-sm">
                         Engineering the future of digital interaction. We build the impossible, one line of code at a
@@ -285,52 +283,52 @@
                     </p>
                 </div>
                 <div>
-                    <h4 class="text-primary font-bold font-space uppercase tracking-widest text-sm mb-6">Quick Links
+                    <h4 class="text-accent font-bold font-space uppercase tracking-widest text-sm mb-6">Quick Links
                     </h4>
-                    <ul class="space-y-3 text-gray-600">
-                        <li><a href="index.html" class="hover:text-primary transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-accent"></i> Home</a></li>
-                        <li><a href="about.html" class="hover:text-primary transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-accent"></i> About</a></li>
+                    <ul class="space-y-3 text-text-secondary">
+                        <li><a href="index.html" class="hover:text-accent transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> Home</a></li>
+                        <li><a href="about.html" class="hover:text-accent transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> About</a></li>
                         <li><a href="services.html"
-                                class="hover:text-primary transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-accent"></i> Services</a></li>
+                                class="hover:text-accent transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> Services</a></li>
                         <li><a href="projects.html"
-                                class="hover:text-primary transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-accent"></i> Projects</a></li>
+                                class="hover:text-accent transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> Projects</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-primary font-bold font-space uppercase tracking-widest text-sm mb-6">Connect</h4>
-                    <ul class="space-y-3 text-gray-600">
+                    <h4 class="text-accent font-bold font-space uppercase tracking-widest text-sm mb-6">Connect</h4>
+                    <ul class="space-y-3 text-text-secondary">
                         <li><a href="https://wa.me/256702083515"
                                 class="hover:text-accent transition-colors flex items-center gap-3"><span
-                                    class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center"><i
+                                    class="w-8 h-8 rounded-full bg-green-900/40 text-green-400 flex items-center justify-center"><i
                                         class="fab fa-whatsapp"></i></span> 0702 083 515</a></li>
                         <li><a href="mailto:ibrixraxy@gmail.com"
                                 class="hover:text-accent transition-colors flex items-center gap-3"><span
-                                    class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center"><i
+                                    class="w-8 h-8 rounded-full bg-accent/10 text-accent flex items-center justify-center"><i
                                         class="fas fa-envelope"></i></span> ibrixraxy@gmail.com</a></li>
                     </ul>
                     <div class="flex gap-4 mt-6">
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+                            class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
                                 class="fab fa-twitter"></i></a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+                            class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
                                 class="fab fa-linkedin-in"></i></a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+                            class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
                                 class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
             <div
-                class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                class="border-t border-accent/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-text-secondary">
                 <p>&copy; 2026 RAXY LABS. All rights reserved.</p>
                 <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -341,7 +339,7 @@
     <!-- Modals -->
     <!-- Raxy Modal -->
     <div id="raxy-modal" class="modal-overlay px-4">
-        <div class="modal-content glass-panel relative p-8 md:p-12 border border-white/50 shadow-2xl">
+        <div class="modal-content glass-panel relative p-8 md:p-12 border border-accent/15 shadow-2xl">
             <button class="modal-close top-4 right-4">
                 <i class="fas fa-times"></i>
             </button>
@@ -354,7 +352,7 @@
                     </div>
                 </div>
                 <div class="md:w-2/3">
-                    <h3 class="text-3xl font-bold text-gray-900 mb-2 font-space">MULINDWA IBRAHIM (RAXY)</h3>
+                    <h3 class="text-3xl font-bold text-white mb-2 font-space">MULINDWA IBRAHIM (RAXY)</h3>
                     <p
                         class="text-accent uppercase tracking-widest text-sm mb-6 border-l-2 border-accent pl-3 font-bold">
                         Founder — RAXY LABS</p>
@@ -373,7 +371,7 @@
                 </div>
             </div>
 
-            <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 mb-8">
+            <div class="bg-primary-dark/60 p-6 rounded-xl border border-accent/10 mb-8">
                 <h4 class="text-primary font-bold mb-4 font-space">Key Milestones</h4>
                 <ul class="space-y-3 text-text-secondary text-sm">
                     <li class="flex gap-2 items-start"><span class="text-accent mt-1">>></span> Built and delivered
@@ -387,7 +385,7 @@
                 </ul>
             </div>
 
-            <p class="italic text-gray-500 text-center border-t border-gray-100 pt-6">
+            <p class="italic text-text-secondary text-center border-t border-accent/10 pt-6">
                 "Mulindwa Ibrahim is not building for quick wins. He is engineering foundations — patiently,
                 deliberately, and with scale in mind."
             </p>
@@ -396,7 +394,7 @@
 
     <!-- Roan Modal -->
     <div id="roan-modal" class="modal-overlay px-4">
-        <div class="modal-content glass-panel relative p-8 md:p-12 max-w-2xl border border-white/50 shadow-2xl">
+        <div class="modal-content glass-panel relative p-8 md:p-12 max-w-2xl border border-accent/15 shadow-2xl">
             <button class="modal-close top-4 right-4">
                 <i class="fas fa-times"></i>
             </button>
@@ -407,10 +405,10 @@
                     <img src="assets/images/Roan.jpg" alt="Roan" class="w-full h-full object-cover">
                 </div>
 
-                <h3 class="text-3xl font-bold text-gray-900 mb-2 font-space">MUHOOZI ERIC (ROAN)</h3>
+                <h3 class="text-3xl font-bold text-white mb-2 font-space">MUHOOZI ERIC (ROAN)</h3>
                 <p class="text-primary-light uppercase tracking-widest text-sm mb-6 font-bold">Executive</p>
 
-                <p class="text-gray-500 leading-relaxed">
+                <p class="text-text-secondary leading-relaxed">
                     Detailed profile coming soon.
                 </p>
             </div>
@@ -419,7 +417,7 @@
 
     <!-- Hive Modal -->
     <div id="hive-modal" class="modal-overlay px-4">
-        <div class="modal-content glass-panel relative p-8 md:p-12 max-w-2xl border border-white/50 shadow-2xl">
+        <div class="modal-content glass-panel relative p-8 md:p-12 max-w-2xl border border-accent/15 shadow-2xl">
             <button class="modal-close top-4 right-4">
                 <i class="fas fa-times"></i>
             </button>
@@ -430,10 +428,10 @@
                     <span class="font-space font-bold text-4xl text-white">H</span>
                 </div>
 
-                <h3 class="text-3xl font-bold text-gray-900 mb-2 font-space">NJUKI JOSEPH (HIVE)</h3>
+                <h3 class="text-3xl font-bold text-white mb-2 font-space">NJUKI JOSEPH (HIVE)</h3>
                 <p class="text-accent uppercase tracking-widest text-sm mb-6 font-bold">Executive</p>
 
-                <p class="text-gray-500 leading-relaxed">
+                <p class="text-text-secondary leading-relaxed">
                     Detailed profile coming soon.
                 </p>
             </div>

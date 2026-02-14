@@ -29,7 +29,7 @@
       ]
     }
   </script>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,11 +48,15 @@
       theme: {
         extend: {
           colors: {
-            'primary': '#7b2cbf',
-            'primary-dark': '#5e2195',
-            'accent': '#ffd700',
-            'text-primary': '#111827',
-            'text-secondary': '#4b5563',
+            'primary': '#0f2547',
+            'primary-dark': '#091a33',
+                        'primary-light': '#1a3a6b',
+                        'accent-glow': 'rgba(0, 180, 216, 0.5)',
+            'primary-light': '#1a3a6b',
+            'accent': '#00b4d8',
+            'accent-glow': 'rgba(0, 180, 216, 0.5)',
+            'text-primary': '#e8edf5',
+            'text-secondary': '#8b9dc3',
           },
           fontFamily: {
             'space': ['"Space Grotesk"', 'sans-serif'],
@@ -75,15 +79,9 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Ensure body background is handled by CSS */
-    body {
-      background-color: var(--bg-body);
-    }
-  </style>
 </head>
 
-<body class="text-primary overflow-x-hidden font-sans antialiased">
+<body class="text-text-primary overflow-x-hidden font-sans antialiased">
 
   <!-- Background Canvas -->
   <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-30"></canvas>
@@ -94,19 +92,19 @@
       <a href="index.html" class="flex items-center gap-2 group">
         <img src="assets/images/logo.png" alt="RAXY TECH LABS"
           class="h-10 w-auto object-contain transition-transform group-hover:scale-110 duration-300">
-        <span class="font-space font-bold text-xl tracking-wider hidden sm:block">RAXY<span
+        <span class="font-space font-bold text-xl tracking-wider hidden sm:block text-white">RAXY<span
             class="text-gradient">LABS</span></span>
       </a>
 
       <div class="hidden md:flex items-center space-x-8">
         <a href="index.html"
-          class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Home</a>
+          class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Home</a>
         <a href="about.html"
-          class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">About</a>
+          class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">About</a>
         <a href="services.html"
-          class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Services</a>
+          class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Services</a>
         <a href="projects.html"
-          class="nav-link text-sm font-semibold uppercase tracking-widest hover:text-primary transition-colors">Projects</a>
+          class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Projects</a>
         <a href="contact.html"
           class="btn-primary text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
           Get in Touch
@@ -114,7 +112,7 @@
       </div>
 
       <!-- Mobile Menu Button -->
-      <button class="md:hidden text-2xl text-primary hover:text-accent transition-colors" id="mobile-menu-btn">
+      <button class="md:hidden text-2xl text-accent hover:text-white transition-colors" id="mobile-menu-btn">
         <i class="fas fa-bars"></i>
       </button>
     </div>
@@ -122,10 +120,10 @@
     <!-- Mobile Menu -->
     <div class="md:hidden glass-panel mt-2 mx-auto max-w-[95%] hidden" id="mobile-menu">
       <div class="flex flex-col p-6 space-y-4 text-center">
-        <a href="index.html" class="text-primary font-bold">Home</a>
-        <a href="about.html" class="hover:text-primary transition-colors">About</a>
-        <a href="services.html" class="hover:text-primary transition-colors">Services</a>
-        <a href="projects.html" class="hover:text-primary transition-colors">Projects</a>
+        <a href="index.html" class="text-accent font-bold">Home</a>
+        <a href="about.html" class="text-gray-300 hover:text-accent transition-colors">About</a>
+        <a href="services.html" class="text-gray-300 hover:text-accent transition-colors">Services</a>
+        <a href="projects.html" class="text-gray-300 hover:text-accent transition-colors">Projects</a>
         <a href="contact.html" class="btn-primary w-full inline-block">Contact Us</a>
       </div>
     </div>
@@ -133,21 +131,24 @@
 
   <!-- Hero Section -->
   <section id="home" class="min-h-screen flex items-center justify-center relative pt-32 pb-20">
+    <!-- Brand Logo Watermark -->
+    <img src="assets/images/brandlogo.png" alt="" class="brand-watermark" aria-hidden="true">
+
     <!-- Decorative Blobs -->
-    <div class="absolute top-20 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -z-10 animate-pulse-slow">
+    <div class="absolute top-20 left-0 w-96 h-96 bg-accent/10 rounded-full blur-[100px] -z-10 animate-pulse-slow">
     </div>
     <div
-      class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] -z-10 animate-pulse-slow options-delay-[2s]">
+      class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary-light/15 rounded-full blur-[120px] -z-10 animate-pulse-slow">
     </div>
 
     <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
       <div class="text-center lg:text-left z-10" data-aos="fade-right">
-        <div class="inline-block px-4 py-2 bg-white/50 backdrop-blur-sm rounded-full border border-primary/10 mb-6">
-          <span class="text-primary font-space text-xs font-bold uppercase tracking-[0.2em]">Future Ready
+        <div class="inline-block px-4 py-2 bg-accent/100 backdrop-blur-sm rounded-full border border-accent/20 mb-6">
+          <span class="text-accent font-space text-xs font-bold uppercase tracking-[0.2em]">Future Ready
             Technology</span>
         </div>
 
-        <h1 class="text-4xl lg:text-6xl font-bold mb-8 leading-tight font-space">
+        <h1 class="text-4xl lg:text-6xl font-bold mb-8 leading-tight font-space text-white">
           Raxy Tech Labs<br>
           <span class="text-gradient">Building Scalable Software</span> & IoT Solutions.
         </h1>
@@ -163,24 +164,24 @@
             View Our Work
           </a>
           <a href="contact.html"
-            class="px-8 py-3 bg-white border border-gray-200 text-gray-700 font-semibold rounded-full hover:border-primary hover:text-primary hover:shadow-lg transition-all duration-300 text-center flex items-center justify-center gap-2">
+            class="px-8 py-3 bg-transparent border border-accent/30 text-gray-300 font-semibold rounded-full hover:border-accent hover:text-accent hover:shadow-lg hover:shadow-accent/10 transition-all duration-300 text-center flex items-center justify-center gap-2">
             Start a Project <i class="fas fa-arrow-right text-xs"></i>
           </a>
         </div>
 
         <!-- Stats -->
-        <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 border-t border-gray-100 pt-8">
+        <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 border-t border-accent/10 pt-8">
           <div>
-            <h3 class="text-3xl font-bold font-space text-primary">50+</h3>
-            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Projects</p>
+            <h3 class="text-3xl font-bold font-space text-accent">50+</h3>
+            <p class="text-xs text-text-secondary uppercase tracking-widest mt-1">Projects</p>
           </div>
           <div>
-            <h3 class="text-3xl font-bold font-space text-primary">99%</h3>
-            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Satisfaction</p>
+            <h3 class="text-3xl font-bold font-space text-accent">99%</h3>
+            <p class="text-xs text-text-secondary uppercase tracking-widest mt-1">Satisfaction</p>
           </div>
           <div>
-            <h3 class="text-3xl font-bold font-space text-primary">24/7</h3>
-            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Support</p>
+            <h3 class="text-3xl font-bold font-space text-accent">24/7</h3>
+            <p class="text-xs text-text-secondary uppercase tracking-widest mt-1">Support</p>
           </div>
         </div>
       </div>
@@ -189,52 +190,52 @@
       <div class="relative h-[400px] lg:h-[600px] flex items-center justify-center" data-aos="fade-left">
         <!-- Abstract Circles -->
         <div class="absolute inset-0 flex items-center justify-center">
-          <div class="w-[300px] h-[300px] border border-primary/20 rounded-full animate-[spin_10s_linear_infinite]">
+          <div class="w-[300px] h-[300px] border border-accent/20 rounded-full animate-[spin_10s_linear_infinite]">
           </div>
           <div
-            class="absolute w-[450px] h-[450px] border border-accent/20 rounded-full animate-[spin_15s_linear_infinite_reverse]">
+            class="absolute w-[450px] h-[450px] border border-primary-light/30 rounded-full animate-[spin_15s_linear_infinite_reverse]">
           </div>
         </div>
 
         <div
           class="glass-panel p-8 relative z-10 w-full max-w-md animate-float transform rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
-          <div class="flex justify-between items-center mb-6 border-b border-gray-100 pb-4">
+          <div class="flex justify-between items-center mb-6 border-b border-accent/10 pb-4">
             <div class="flex gap-2">
-              <div class="h-3 w-3 rounded-full bg-red-400"></div>
-              <div class="h-3 w-3 rounded-full bg-yellow-400"></div>
-              <div class="h-3 w-3 rounded-full bg-green-400"></div>
+              <div class="h-3 w-3 rounded-full bg-red-500/70"></div>
+              <div class="h-3 w-3 rounded-full bg-yellow-500/70"></div>
+              <div class="h-3 w-3 rounded-full bg-green-500/70"></div>
             </div>
-            <div class="text-xs font-mono text-gray-400">RAXY_OS v2.0</div>
+            <div class="text-xs font-mono text-text-secondary">RAXY_OS v2.0</div>
           </div>
 
-          <div class="space-y-4 font-mono text-sm text-gray-600">
+          <div class="space-y-4 font-mono text-sm text-text-secondary">
             <div class="flex items-center gap-2">
-              <span class="text-green-500">➜</span>
+              <span class="text-green-400">➜</span>
               <span>Initializing Core Systems...</span>
             </div>
             <div class="flex items-center gap-2 pl-4">
-              <span class="text-gray-400">↳</span>
-              <span class="text-primary font-bold">Design_Engine: LOADED</span>
+              <span class="text-text-light">↳</span>
+              <span class="text-accent font-bold">Design_Engine: LOADED</span>
             </div>
             <div class="flex items-center gap-2 pl-4">
-              <span class="text-gray-400">↳</span>
-              <span class="text-accent font-bold">UX_Protocol: ACTIVE</span>
+              <span class="text-text-light">↳</span>
+              <span class="text-cyan-300 font-bold">UX_Protocol: ACTIVE</span>
             </div>
 
-            <div class="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-100 text-xs text-gray-500">
+            <div class="mt-6 p-4 bg-primary-dark/60 rounded-lg border border-accent/10 text-xs text-text-secondary">
               <code>
-                const <span class="text-primary">future</span> = new <span class="text-accent">RaxyLab()</span>;<br>
-                future.engineer(<span class="text-green-600">'limitless'</span>);
+                const <span class="text-accent">future</span> = new <span class="text-cyan-300">RaxyLab()</span>;<br>
+                future.engineer(<span class="text-green-400">'limitless'</span>);
               </code>
             </div>
 
             <div class="mt-4">
               <div class="flex justify-between text-xs mb-1">
                 <span>System Load</span>
-                <span class="text-primary">100%</span>
+                <span class="text-accent">100%</span>
               </div>
-              <div class="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
-                <div class="h-full bg-gradient-to-r from-primary to-accent w-full animate-pulse"></div>
+              <div class="h-1.5 w-full bg-primary-dark/60 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-accent to-cyan-300 w-full animate-pulse"></div>
               </div>
             </div>
           </div>
@@ -244,13 +245,13 @@
   </section>
 
   <!-- Footer -->
-  <footer class="glass-panel mt-20 border-t border-gray-200/50 bg-white/50 backdrop-blur-xl">
+  <footer class="glass-panel mt-20 border-t border-accent/10">
     <div class="container mx-auto px-6 py-12">
       <div class="grid md:grid-cols-4 gap-12 mb-12">
         <div class="col-span-1 md:col-span-2">
-          <a href="#" class="text-2xl font-bold font-space tracking-wider text-gray-900 flex items-center gap-2 mb-6">
+          <a href="#" class="text-2xl font-bold font-space tracking-wider text-white flex items-center gap-2 mb-6">
             <img src="assets/images/logo.png" class="h-8 w-auto opacity-80" alt="Logo">
-            <span class="text-primary">RAXY</span><span class="text-accent">LABS</span>
+            <span class="text-accent">RAXY</span><span class="text-cyan-300">LABS</span>
           </a>
           <p class="text-text-secondary leading-relaxed max-w-sm">
             Engineering the future of digital interaction. We build the impossible, one line of code at a time using
@@ -258,49 +259,49 @@
           </p>
         </div>
         <div>
-          <h4 class="text-primary font-bold font-space uppercase tracking-widest text-sm mb-6">Quick Links</h4>
-          <ul class="space-y-3 text-gray-600">
-            <li><a href="index.html" class="hover:text-primary transition-colors flex items-center gap-2"><i
-                  class="fas fa-chevron-right text-xs text-accent"></i> Home</a></li>
-            <li><a href="about.html" class="hover:text-primary transition-colors flex items-center gap-2"><i
-                  class="fas fa-chevron-right text-xs text-accent"></i> About</a></li>
-            <li><a href="services.html" class="hover:text-primary transition-colors flex items-center gap-2"><i
-                  class="fas fa-chevron-right text-xs text-accent"></i> Services</a></li>
-            <li><a href="projects.html" class="hover:text-primary transition-colors flex items-center gap-2"><i
-                  class="fas fa-chevron-right text-xs text-accent"></i> Projects</a></li>
+          <h4 class="text-accent font-bold font-space uppercase tracking-widest text-sm mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-text-secondary">
+            <li><a href="index.html" class="hover:text-accent transition-colors flex items-center gap-2"><i
+                  class="fas fa-chevron-right text-xs text-cyan-400"></i> Home</a></li>
+            <li><a href="about.html" class="hover:text-accent transition-colors flex items-center gap-2"><i
+                  class="fas fa-chevron-right text-xs text-cyan-400"></i> About</a></li>
+            <li><a href="services.html" class="hover:text-accent transition-colors flex items-center gap-2"><i
+                  class="fas fa-chevron-right text-xs text-cyan-400"></i> Services</a></li>
+            <li><a href="projects.html" class="hover:text-accent transition-colors flex items-center gap-2"><i
+                  class="fas fa-chevron-right text-xs text-cyan-400"></i> Projects</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-primary font-bold font-space uppercase tracking-widest text-sm mb-6">Connect</h4>
-          <ul class="space-y-3 text-gray-600">
+          <h4 class="text-accent font-bold font-space uppercase tracking-widest text-sm mb-6">Connect</h4>
+          <ul class="space-y-3 text-text-secondary">
             <li><a href="https://wa.me/256702083515"
                 class="hover:text-accent transition-colors flex items-center gap-3"><span
-                  class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center"><i
+                  class="w-8 h-8 rounded-full bg-green-900/40 text-green-400 flex items-center justify-center"><i
                     class="fab fa-whatsapp"></i></span> 0702 083 515</a></li>
             <li><a href="mailto:ibrixraxy@gmail.com"
                 class="hover:text-accent transition-colors flex items-center gap-3"><span
-                  class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center"><i
+                  class="w-8 h-8 rounded-full bg-accent/10 text-accent flex items-center justify-center"><i
                     class="fas fa-envelope"></i></span> ibrixraxy@gmail.com</a></li>
           </ul>
           <div class="flex gap-4 mt-6">
             <a href="#"
-              class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+              class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
                 class="fab fa-twitter"></i></a>
             <a href="#"
-              class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+              class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
                 class="fab fa-linkedin-in"></i></a>
             <a href="#"
-              class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-primary hover:shadow-md transition-all"><i
+              class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
                 class="fab fa-github"></i></a>
           </div>
         </div>
       </div>
       <div
-        class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        class="border-t border-accent/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-text-secondary">
         <p>&copy; 2026 RAXY LABS. All rights reserved.</p>
         <div class="flex gap-6 mt-4 md:mt-0">
-          <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
-          <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
         </div>
       </div>
     </div>
