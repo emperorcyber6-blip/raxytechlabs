@@ -2,285 +2,407 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Development & IoT Services in Uganda | Raxy Tech Labs</title>
-    <meta name="description"
-        content="Raxy Tech Labs offers top-tier software development, IoT solutions, and school management systems in Uganda. Enterprise systems, web platforms, and more.">
-    <meta property="og:site_name" content="Raxy Tech Labs" />
-    <meta property="og:title" content="Services – Raxy Tech Labs" />
-    <meta property="og:type" content="website" />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Development & IoT Services in Uganda | Raxy Tech Labs</title>
+  <meta name="description"
+    content="Raxy Tech Labs offers top-tier software development, IoT solutions, and school management systems in Uganda. Enterprise systems, web platforms, and more.">
+  <meta property="og:site_name" content="Raxy Tech Labs" />
+  <meta property="og:title" content="Services – Raxy Tech Labs" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#0f2547',
-                        'primary-dark': '#091a33',
-                        'primary-light': '#1a3a6b',
-                        'accent-glow': 'rgba(0, 180, 216, 0.5)',
-                        'accent': '#00b4d8',
-                        'text-primary': '#e8edf5',
-                        'text-secondary': '#8b9dc3',
-                    },
-                    fontFamily: {
-                        'space': ['"Space Grotesk"', 'sans-serif'],
-                        'sans': ['"Outfit"', 'sans-serif'],
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                }
-            }
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary':        '#0a1628',
+            'primary-dark':   '#060e1c',
+            'primary-mid':    '#0f2040',
+            'primary-light':  '#162d55',
+            'accent':         '#00d4ff',
+            'accent-muted':   '#00a8cc',
+            'emerald':        '#10d9a4',
+            'violet':         '#7c3aed',
+            'text-primary':   '#edf2fb',
+            'text-secondary': '#8ea3c8',
+            'text-muted':     '#4d6080',
+          },
+          fontFamily: {
+            'space': ['"Space Grotesk"', 'sans-serif'],
+            'sans':  ['"Outfit"', 'sans-serif'],
+          },
         }
-    </script>
+      }
+    }
+  </script>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="text-text-primary overflow-x-hidden font-sans antialiased">
-    <!-- Background Animation Canvas -->
-    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-30"></canvas>
+  <!-- Background Canvas -->
+  <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-4 px-4 transition-all duration-300" id="navbar">
-        <div class="glass-panel container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
-            <a href="index.html" class="flex items-center gap-2 group">
-                <img src="assets/images/logo.png" alt="RAXY TECH LABS"
-                    class="h-10 w-auto object-contain transition-transform group-hover:scale-110 duration-300">
-                <span class="font-space font-bold text-xl tracking-wider hidden sm:block text-white">RAXY<span
-                        class="text-gradient">LABS</span></span>
-            </a>
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 top-5 px-5 transition-all duration-500" id="navbar">
+    <div class="glass-panel container mx-auto px-6 py-3 flex justify-between items-center max-w-6xl"
+         style="border-radius:9999px;">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="assets/images/logo.png" alt="RAXY TECH LABS"
+          class="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-110">
+        <span class="font-space font-bold text-lg tracking-wide hidden sm:block text-white">
+          RAXY<span class="text-gradient">LABS</span>
+        </span>
+      </a>
 
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="index.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Home</a>
-                <a href="about.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">About</a>
-                <a href="services.html"
-                    class="nav-link text-sm font-bold uppercase tracking-widest text-accent border-b-2 border-accent">Services</a>
-                <a href="projects.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Projects</a>
-                <a href="contact.html"
-                    class="btn-primary text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
-                    Get in Touch
-                </a>
-            </div>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"    class="nav-link">Home</a>
+        <a href="about.html"    class="nav-link">About</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html"  class="btn-primary text-sm">
+          Get in Touch <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
 
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-2xl text-accent hover:text-white transition-colors" id="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+      <button class="md:hidden text-xl text-accent hover:text-white transition-colors p-2" id="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <div class="md:hidden glass-panel mt-3 mx-auto max-w-[94%] hidden" id="mobile-menu" style="border-radius:1.25rem;">
+      <div class="flex flex-col p-6 gap-4 text-center">
+        <a href="index.html"    class="text-text-secondary hover:text-accent transition-colors text-sm uppercase tracking-widest font-semibold">Home</a>
+        <a href="about.html"    class="text-text-secondary hover:text-accent transition-colors text-sm uppercase tracking-widest font-semibold">About</a>
+        <a href="services.html" class="text-accent font-bold font-space text-sm uppercase tracking-widest">Services</a>
+        <a href="projects.html" class="text-text-secondary hover:text-accent transition-colors text-sm uppercase tracking-widest font-semibold">Projects</a>
+        <hr class="glow-divider my-1">
+        <a href="contact.html"  class="btn-primary w-full text-sm">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="min-h-[52vh] flex items-center justify-center relative pt-36 pb-12 overflow-hidden">
+    <div class="blob w-[500px] h-[500px] bg-accent/7 top-[-80px] left-[-100px]"></div>
+    <div class="blob w-[400px] h-[400px] bg-violet/8 bottom-0 right-[-80px]" style="animation-delay:-4s;"></div>
+    <!-- Grid -->
+    <div class="absolute inset-0 -z-10 pointer-events-none"
+         style="background-image:linear-gradient(rgba(0,212,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.02) 1px,transparent 1px);background-size:60px 60px;"></div>
+
+    <div class="container mx-auto px-6 text-center z-10 reveal">
+      <div class="section-tag mb-6 mx-auto" style="width:fit-content;">Client Offerings</div>
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 font-space text-white leading-tight">
+        Services We <span class="text-gradient">Offer</span>
+      </h1>
+      <p class="text-text-secondary max-w-xl mx-auto text-lg leading-relaxed">
+        End-to-end solutions — from enterprise systems to creative multimedia productions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-24 relative">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Enterprise Systems -->
+        <div class="service-card p-10 group reveal reveal-delay-1">
+          <div class="absolute top-0 left-0 right-0 h-[2px]"
+               style="background:linear-gradient(90deg,var(--accent),var(--emerald));opacity:0;transition:opacity 0.3s ease;" class="card-top-line"></div>
+          <div class="icon-box w-16 h-16 mb-8" style="background:rgba(0,212,255,0.10);">
+            <i class="fas fa-server text-2xl" style="color:var(--accent);"></i>
+          </div>
+          <h3 class="text-2xl font-bold font-space text-white mb-4 group-hover:text-accent transition-colors duration-300">
+            Enterprise Systems
+          </h3>
+          <p class="text-text-secondary text-sm leading-relaxed mb-8">
+            Ready-to-deploy and custom system solutions for institutions and businesses.
+            Scalable, secure, and built for real-world performance.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(0,212,255,0.12);"><i class="fas fa-check text-[10px]" style="color:var(--accent);"></i></span>
+              Restaurant POS System
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(0,212,255,0.12);"><i class="fas fa-check text-[10px]" style="color:var(--accent);"></i></span>
+              School Voting System
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(0,212,255,0.12);"><i class="fas fa-check text-[10px]" style="color:var(--accent);"></i></span>
+              Custom Management Software
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(0,212,255,0.12);"><i class="fas fa-check text-[10px]" style="color:var(--accent);"></i></span>
+              SACCO & Finance Platforms
+            </li>
+          </ul>
         </div>
 
-        <!-- Mobile Menu -->
-        <div class="md:hidden glass-panel mt-2 mx-auto max-w-[95%] hidden" id="mobile-menu">
-            <div class="flex flex-col p-6 space-y-4 text-center">
-                <a href="index.html" class="text-gray-300 hover:text-accent transition-colors">Home</a>
-                <a href="about.html" class="text-gray-300 hover:text-accent transition-colors">About</a>
-                <a href="services.html" class="text-accent font-bold">Services</a>
-                <a href="projects.html" class="text-gray-300 hover:text-accent transition-colors">Projects</a>
-                <a href="contact.html" class="btn-primary w-full inline-block">Contact Us</a>
-            </div>
+        <!-- Web & Payments — Featured -->
+        <div class="service-card p-10 group reveal reveal-delay-2"
+             style="border-color:rgba(16,217,164,0.22);background:rgba(16,217,164,0.04);">
+          <div class="absolute top-0 left-0 right-0 h-[2px]"
+               style="background:linear-gradient(90deg,var(--accent),var(--emerald));"></div>
+          <div class="icon-box w-16 h-16 mb-8" style="background:rgba(16,217,164,0.12);">
+            <i class="fas fa-globe text-2xl" style="color:var(--emerald);"></i>
+          </div>
+          <h3 class="text-2xl font-bold font-space text-white mb-4 transition-colors duration-300">Web &amp; Payments</h3>
+          <p class="text-text-secondary text-sm leading-relaxed mb-8">
+            End-to-end web development with secure financial integrations, tailored for the modern digital economy across Africa.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(16,217,164,0.12);"><i class="fas fa-check text-[10px]" style="color:var(--emerald);"></i></span>
+              Website Development
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(16,217,164,0.12);"><i class="fas fa-check text-[10px]" style="color:var(--emerald);"></i></span>
+              Mobile Money Integration
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(16,217,164,0.12);"><i class="fas fa-check text-[10px]" style="color:var(--emerald);"></i></span>
+              API Development & Integration
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(16,217,164,0.12);"><i class="fas fa-check text-[10px]" style="color:var(--emerald);"></i></span>
+              E-Commerce Solutions
+            </li>
+          </ul>
         </div>
-    </nav>
 
-    <!-- Header -->
-    <section class="min-h-[50vh] flex items-center justify-center relative pt-32 pb-10">
-        <!-- Decorative Blobs -->
-        <div
-            class="absolute top-1/2 left-1/3 w-96 h-96 bg-accent/10 rounded-full blur-[100px] -z-10 animate-pulse-slow">
+        <!-- IoT & Smart Systems -->
+        <div class="service-card p-10 group reveal reveal-delay-3">
+          <div class="icon-box w-16 h-16 mb-8" style="background:rgba(0,212,255,0.08);">
+            <i class="fas fa-network-wired text-2xl" style="color:var(--accent);"></i>
+          </div>
+          <h3 class="text-2xl font-bold font-space text-white mb-4 group-hover:text-accent transition-colors duration-300">
+            IoT &amp; Smart Systems
+          </h3>
+          <p class="text-text-secondary text-sm leading-relaxed mb-8">
+            Connecting the physical and digital worlds. Smart environment systems, sensor networks, and automation prototypes built in our lab.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(0,212,255,0.12);"><i class="fas fa-check text-[10px]" style="color:var(--accent);"></i></span>
+              Smart Environment Sensors
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(0,212,255,0.12);"><i class="fas fa-check text-[10px]" style="color:var(--accent);"></i></span>
+              Arduino / Raspberry Pi Builds
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(0,212,255,0.12);"><i class="fas fa-check text-[10px]" style="color:var(--accent);"></i></span>
+              Automation Prototyping
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(0,212,255,0.12);"><i class="fas fa-check text-[10px]" style="color:var(--accent);"></i></span>
+              Real-Time Dashboards
+            </li>
+          </ul>
         </div>
-        <div
-            class="absolute bottom-0 right-1/4 w-[250px] h-[250px] bg-accent/10 rounded-full blur-[80px] -z-10 animate-pulse-slow">
+
+        <!-- Creative & Multimedia -->
+        <div class="service-card p-10 group reveal reveal-delay-1">
+          <div class="icon-box w-16 h-16 mb-8" style="background:rgba(124,58,237,0.12);">
+            <i class="fas fa-palette text-2xl" style="color:#a78bfa;"></i>
+          </div>
+          <h3 class="text-2xl font-bold font-space text-white mb-4 group-hover:text-purple-400 transition-colors duration-300">
+            Creative &amp; Multimedia
+          </h3>
+          <p class="text-text-secondary text-sm leading-relaxed mb-8">
+            High-impact visual services for brands and productions. Bringing ideas to life through design, motion, and immersive experiences.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(124,58,237,0.15);"><i class="fas fa-check text-[10px] text-purple-400"></i></span>
+              Branding &amp; Identity Design
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(124,58,237,0.15);"><i class="fas fa-check text-[10px] text-purple-400"></i></span>
+              Game &amp; VFX Support
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(124,58,237,0.15);"><i class="fas fa-check text-[10px] text-purple-400"></i></span>
+              Multimedia Production
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(124,58,237,0.15);"><i class="fas fa-check text-[10px] text-purple-400"></i></span>
+              UI / UX Design
+            </li>
+          </ul>
         </div>
 
-        <div class="container mx-auto px-6 text-center z-10">
-            <div class="inline-block px-4 py-2 bg-primary/50 backdrop-blur-sm rounded-full border border-accent/20 mb-6">
-                <h2 class="text-accent font-space text-xs font-bold uppercase tracking-[0.3em]">Client Offerings</h2>
-            </div>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 font-space">Services We Offer</h1>
-            <p class="text-text-secondary max-w-2xl mx-auto text-lg">
-                We deliver end-to-end solutions, from enterprise systems to high-end creative productions.
-            </p>
+        <!-- Mobile Apps -->
+        <div class="service-card p-10 group reveal reveal-delay-2">
+          <div class="icon-box w-16 h-16 mb-8" style="background:rgba(251,191,36,0.10);">
+            <i class="fas fa-mobile-alt text-2xl" style="color:#fbbf24;"></i>
+          </div>
+          <h3 class="text-2xl font-bold font-space text-white mb-4 group-hover:text-yellow-400 transition-colors duration-300">
+            Mobile Applications
+          </h3>
+          <p class="text-text-secondary text-sm leading-relaxed mb-8">
+            Cross-platform mobile apps built with React Native — delivering native performance for iOS and Android from a single codebase.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(251,191,36,0.12);"><i class="fas fa-check text-[10px] text-yellow-400"></i></span>
+              React Native / Expo Apps
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(251,191,36,0.12);"><i class="fas fa-check text-[10px] text-yellow-400"></i></span>
+              Offline-First Architecture
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(251,191,36,0.12);"><i class="fas fa-check text-[10px] text-yellow-400"></i></span>
+              Push Notifications
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(251,191,36,0.12);"><i class="fas fa-check text-[10px] text-yellow-400"></i></span>
+              App Store Deployment
+            </li>
+          </ul>
         </div>
-    </section>
 
-    <!-- Services Content -->
-    <section class="py-20 relative">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-8">
-
-                <!-- Group 1: Enterprise Systems -->
-                <div
-                    class="service-card p-10 rounded-3xl bg-primary/40 border border-accent/10 hover:border-accent/40 hover:bg-primary-light/30 hover:shadow-2xl transition-all duration-300 relative overflow-hidden h-full shadow-lg group">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-cyan-600"></div>
-                    <div
-                        class="mb-8 p-4 bg-accent/10 rounded-2xl w-20 h-20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <i class="fas fa-server text-3xl text-accent"></i>
-                    </div>
-                    <h3
-                        class="text-2xl font-bold mb-6 text-white font-space group-hover:text-accent transition-colors">
-                        Enterprise Systems</h3>
-                    <p class="text-text-secondary mb-8 text-sm leading-relaxed">
-                        Ready-to-deploy and custom system solutions for institutions and businesses. Scalable, secure,
-                        and built for performance.
-                    </p>
-                    <ul class="space-y-4 text-text-secondary text-sm">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-accent"></i>
-                            Restaurant POS System</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-accent"></i> School
-                            Voting System</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-accent"></i> Custom
-                            Management Software</li>
-                    </ul>
-                </div>
-
-                <!-- Group 2: Web & Payments -->
-                <div
-                    class="service-card p-10 rounded-3xl bg-primary/40 border border-accent/10 hover:border-accent hover:bg-primary-light/30 hover:shadow-2xl transition-all duration-300 relative overflow-hidden h-full shadow-lg group">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-accent"></div>
-                    <div
-                        class="mb-8 p-4 bg-accent/10 rounded-2xl w-20 h-20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <i class="fas fa-globe text-3xl text-accent"></i>
-                    </div>
-                    <h3
-                        class="text-2xl font-bold mb-6 text-white font-space group-hover:text-accent transition-colors">
-                        Web & Payments</h3>
-                    <p class="text-text-secondary mb-8 text-sm leading-relaxed">
-                        End-to-end web development with secure financial integrations, tailored for the modern digital
-                        economy.
-                    </p>
-                    <ul class="space-y-4 text-text-secondary text-sm">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-400"></i> Website
-                            Development</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-400"></i> Payment
-                            System Integration</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-400"></i> API
-                            Development</li>
-                    </ul>
-                </div>
-
-                <!-- Group 3: Creative & Multimedia -->
-                <div
-                    class="service-card p-10 rounded-3xl bg-primary/40 border border-accent/10 hover:border-purple-500 hover:bg-primary-light/30 hover:shadow-2xl transition-all duration-300 relative overflow-hidden h-full shadow-lg group">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
-                    <div
-                        class="mb-8 p-4 bg-purple-900/30 rounded-2xl w-20 h-20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <i class="fas fa-palette text-3xl text-purple-500"></i>
-                    </div>
-                    <h3
-                        class="text-2xl font-bold mb-6 text-white font-space group-hover:text-purple-500 transition-colors">
-                        Creative & Multimedia</h3>
-                    <p class="text-text-secondary mb-8 text-sm leading-relaxed">
-                        High-impact visual services for brands and productions. We bring ideas to life through design
-                        and motion.
-                    </p>
-                    <ul class="space-y-4 text-text-secondary text-sm">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i>
-                            Branding & Identity</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i> Game /
-                            VFX Support</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-500"></i>
-                            Multimedia Production</li>
-                    </ul>
-                </div>
-
-            </div>
+        <!-- Consulting & Support -->
+        <div class="service-card p-10 group reveal reveal-delay-3">
+          <div class="icon-box w-16 h-16 mb-8" style="background:rgba(239,68,68,0.10);">
+            <i class="fas fa-headset text-2xl" style="color:#f87171;"></i>
+          </div>
+          <h3 class="text-2xl font-bold font-space text-white mb-4 group-hover:text-red-400 transition-colors duration-300">
+            Consulting &amp; Support
+          </h3>
+          <p class="text-text-secondary text-sm leading-relaxed mb-8">
+            Strategic tech consulting, system audits, and ongoing maintenance.
+            We stay invested in your product's success after launch.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(239,68,68,0.12);"><i class="fas fa-check text-[10px] text-red-400"></i></span>
+              Tech Strategy & Road-mapping
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(239,68,68,0.12);"><i class="fas fa-check text-[10px] text-red-400"></i></span>
+              System Audits &amp; Code Review
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(239,68,68,0.12);"><i class="fas fa-check text-[10px] text-red-400"></i></span>
+              24/7 Maintenance Plans
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-secondary">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(239,68,68,0.12);"><i class="fas fa-check text-[10px] text-red-400"></i></span>
+              Staff Training &amp; Handover
+            </li>
+          </ul>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="glass-panel mt-20 border-t border-accent/10">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-2">
-                    <a href="#"
-                        class="text-2xl font-bold font-space tracking-wider text-white flex items-center gap-2 mb-6">
-                        <img src="assets/images/logo.png" class="h-8 w-auto opacity-80" alt="Logo">
-                        <span class="text-accent">RAXY</span><span class="text-cyan-300">LABS</span>
-                    </a>
-                    <p class="text-text-secondary leading-relaxed max-w-sm">
-                        Engineering the future of digital interaction. We build the impossible, one line of code at a
-                        time using cutting-edge technologies.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-accent font-bold font-space uppercase tracking-widest text-sm mb-6">Quick Links
-                    </h4>
-                    <ul class="space-y-3 text-text-secondary">
-                        <li><a href="index.html" class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> Home</a></li>
-                        <li><a href="about.html" class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> About</a></li>
-                        <li><a href="services.html"
-                                class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> Services</a></li>
-                        <li><a href="projects.html"
-                                class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> Projects</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-accent font-bold font-space uppercase tracking-widest text-sm mb-6">Connect</h4>
-                    <ul class="space-y-3 text-text-secondary">
-                        <li><a href="https://wa.me/256702083515"
-                                class="hover:text-accent transition-colors flex items-center gap-3"><span
-                                    class="w-8 h-8 rounded-full bg-green-900/40 text-green-400 flex items-center justify-center"><i
-                                        class="fab fa-whatsapp"></i></span> 0702 083 515</a></li>
-                        <li><a href="mailto:ibrixraxy@gmail.com"
-                                class="hover:text-accent transition-colors flex items-center gap-3"><span
-                                    class="w-8 h-8 rounded-full bg-accent/10 text-accent flex items-center justify-center"><i
-                                        class="fas fa-envelope"></i></span> ibrixraxy@gmail.com</a></li>
-                    </ul>
-                    <div class="flex gap-4 mt-6">
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
-                                class="fab fa-twitter"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
-                                class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="border-t border-accent/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-text-secondary">
-                <p>&copy; 2026 RAXY LABS. All rights reserved.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
-                </div>
-            </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-20 text-center reveal">
+        <div class="glass-panel p-10 md:p-14 max-w-3xl mx-auto" style="border-radius:2rem;">
+          <h3 class="text-3xl md:text-4xl font-bold font-space text-white mb-4">
+            Not sure what you need?
+          </h3>
+          <p class="text-text-secondary mb-8">
+            Tell us about your idea and we'll figure out the best path together. No commitment required.
+          </p>
+          <a href="contact.html" class="btn-primary">
+            <i class="fas fa-comments"></i> Let's Talk
+          </a>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <script src="js/script.js"></script>
+  <!-- Footer -->
+  <footer class="relative mt-8 border-t" style="border-color:rgba(0,212,255,0.08);">
+    <div class="container mx-auto px-6 py-14 max-w-6xl">
+      <div class="grid md:grid-cols-4 gap-10 mb-12">
+        <div class="col-span-1 md:col-span-2">
+          <a href="index.html" class="flex items-center gap-3 mb-5 w-fit">
+            <img src="assets/images/logo.png" class="h-9 w-auto opacity-90" alt="Logo">
+            <span class="font-space font-bold text-xl text-white">RAXY<span class="text-gradient">LABS</span></span>
+          </a>
+          <p class="text-text-secondary text-sm leading-relaxed max-w-xs">
+            Engineering the future of digital interaction from Kampala. One line of code at a time, for Africa and beyond.
+          </p>
+          <div class="flex gap-3 mt-6">
+            <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-text-muted hover:text-accent transition-all" style="border:1px solid rgba(0,212,255,0.14);"><i class="fab fa-twitter text-sm"></i></a>
+            <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-text-muted hover:text-accent transition-all" style="border:1px solid rgba(0,212,255,0.14);"><i class="fab fa-linkedin-in text-sm"></i></a>
+            <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-text-muted hover:text-accent transition-all" style="border:1px solid rgba(0,212,255,0.14);"><i class="fab fa-github text-sm"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-space font-bold text-xs uppercase tracking-[0.18em] text-accent mb-6">Navigation</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html"    class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i> Home</a></li>
+            <li><a href="about.html"    class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i> About</a></li>
+            <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i> Services</a></li>
+            <li><a href="projects.html" class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i> Projects</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-space font-bold text-xs uppercase tracking-[0.18em] text-accent mb-6">Contact</h4>
+          <ul class="space-y-4">
+            <li><a href="https://wa.me/256702083515" class="flex items-center gap-3 text-text-secondary hover:text-accent transition-colors text-sm">
+              <span class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.2);"><i class="fab fa-whatsapp text-green-400 text-sm"></i></span>0702 083 515</a></li>
+            <li><a href="mailto:ibrixraxy@gmail.com" class="flex items-center gap-3 text-text-secondary hover:text-accent transition-colors text-sm">
+              <span class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(0,212,255,0.10);border:1px solid rgba(0,212,255,0.16);"><i class="fas fa-envelope text-accent text-sm"></i></span>ibrixraxy@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,255,0.20),transparent);"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center pt-8 gap-4">
+        <p class="text-text-muted text-xs font-space">&copy; 2026 RAXY TECH LABS. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-text-muted text-xs hover:text-accent transition-colors">Privacy Policy</a>
+          <a href="#" class="text-text-muted text-xs hover:text-accent transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 
 </html>

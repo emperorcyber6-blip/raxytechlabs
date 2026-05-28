@@ -2,312 +2,662 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | RAXY LABS</title>
-    <meta name="description"
-        content="Contact RAXY LABS - Let's build something extraordinary together. Send us a transmission.">
-    <meta property="og:site_name" content="Raxy Tech Labs" />
-    <meta property="og:title" content="Contact – Raxy Tech Labs" />
-    <meta property="og:type" content="website" />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Raxy Tech Labs – Let's Build Together</title>
+  <meta name="description"
+    content="Contact RAXY LABS – Get in touch to start a project, discuss an idea, or ask about our services. Based in Kampala, Uganda.">
+  <meta property="og:site_name" content="Raxy Tech Labs" />
+  <meta property="og:title" content="Contact – Raxy Tech Labs" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#0f2547',
-                        'primary-dark': '#091a33',
-                        'primary-light': '#1a3a6b',
-                        'accent-glow': 'rgba(0, 180, 216, 0.5)',
-                        'accent': '#00b4d8',
-                        'text-primary': '#e8edf5',
-                        'text-secondary': '#8b9dc3',
-                    },
-                    fontFamily: {
-                        'space': ['"Space Grotesk"', 'sans-serif'],
-                        'sans': ['"Outfit"', 'sans-serif'],
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                }
-            }
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary': '#0a1628',
+            'primary-dark': '#060e1c',
+            'primary-mid': '#0f2040',
+            'primary-light': '#162d55',
+            'accent': '#00d4ff',
+            'accent-muted': '#00a8cc',
+            'emerald': '#10d9a4',
+            'violet': '#7c3aed',
+            'text-primary': '#edf2fb',
+            'text-secondary': '#8ea3c8',
+            'text-muted': '#4d6080',
+          },
+          fontFamily: {
+            'space': ['"Space Grotesk"', 'sans-serif'],
+            'sans': ['"Outfit"', 'sans-serif'],
+          },
         }
-    </script>
+      }
+    }
+  </script>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
 
+  <style>
+    /* Contact-page specific input styles */
+    .contact-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(0, 212, 255, 0.14);
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.1rem;
+      color: #edf2fb;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      transition: all 0.25s ease;
+      outline: none;
+    }
+
+    .contact-input::placeholder {
+      color: #4d6080;
+    }
+
+    .contact-input:focus {
+      border-color: rgba(0, 212, 255, 0.45);
+      background: rgba(0, 212, 255, 0.05);
+      box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.10);
+    }
+
+    /* ── Custom Dropdown ─────────────────────── */
+    .custom-dropdown { position: relative; width: 100%; user-select: none; }
+
+    .dropdown-trigger {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(0,212,255,0.18);
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.1rem;
+      color: #4d6080;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      transition: all 0.25s ease;
+    }
+    .dropdown-trigger:hover,
+    .custom-dropdown.open .dropdown-trigger {
+      border-color: rgba(0,212,255,0.45);
+      background: rgba(0,212,255,0.05);
+      box-shadow: 0 0 0 3px rgba(0,212,255,0.10);
+    }
+    .dropdown-trigger.selected { color: #edf2fb; }
+    .dropdown-trigger .trigger-left { display:flex; align-items:center; gap:0.65rem; }
+    .dropdown-trigger .trigger-icon {
+      width: 2rem; height: 2rem; border-radius: 0.5rem;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,212,255,0.08);
+      color: var(--accent, #00d4ff);
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .dropdown-trigger .chevron {
+      color: #4d6080;
+      transition: transform 0.3s cubic-bezier(.4,0,.2,1), color 0.2s;
+      font-size: 0.75rem;
+    }
+    .custom-dropdown.open .chevron { transform: rotate(180deg); color: var(--accent,#00d4ff); }
+
+    .dropdown-list {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0; right: 0;
+      background: rgba(10,22,40,0.97);
+      border: 1px solid rgba(0,212,255,0.18);
+      border-radius: 1rem;
+      padding: 0.4rem;
+      z-index: 200;
+      backdrop-filter: blur(24px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,212,255,0.06);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: max-height 0.35s cubic-bezier(.4,0,.2,1),
+                  opacity 0.25s ease,
+                  transform 0.25s ease;
+      pointer-events: none;
+    }
+    .custom-dropdown.open .dropdown-list {
+      max-height: 360px;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .dropdown-option {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 0.75rem;
+      border-radius: 0.6rem;
+      cursor: pointer;
+      transition: background 0.18s ease, color 0.18s ease;
+      color: #8ea3c8;
+      font-size: 0.875rem;
+      font-family: 'Outfit', sans-serif;
+    }
+    .dropdown-option:hover {
+      background: rgba(0,212,255,0.07);
+      color: #edf2fb;
+    }
+    .dropdown-option.active {
+      background: rgba(0,212,255,0.12);
+      color: var(--accent, #00d4ff);
+    }
+    .dropdown-option .opt-icon {
+      width: 2.1rem; height: 2.1rem;
+      border-radius: 0.5rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .dropdown-option .opt-label { flex: 1; font-weight: 500; }
+    .dropdown-option .opt-check {
+      font-size: 0.75rem;
+      color: var(--accent,#00d4ff);
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+    .dropdown-option.active .opt-check { opacity: 1; }
+  </style>
 </head>
 
 <body class="text-text-primary overflow-x-hidden font-sans antialiased">
+  <!-- Background Canvas -->
+  <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
 
-    <!-- Background Animation Canvas -->
-    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-30"></canvas>
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 top-5 px-5 transition-all duration-500" id="navbar">
+    <div class="glass-panel container mx-auto px-6 py-3 flex justify-between items-center max-w-6xl"
+      style="border-radius:9999px;">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="assets/images/logo.png" alt="RAXY TECH LABS"
+          class="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-110">
+        <span class="font-space font-bold text-lg tracking-wide hidden sm:block text-white">
+          RAXY<span class="text-gradient">LABS</span>
+        </span>
+      </a>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-4 px-4 transition-all duration-300" id="navbar">
-        <div class="glass-panel container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
-            <a href="index.html" class="flex items-center gap-2 group">
-                <img src="assets/images/logo.png" alt="RAXY TECH LABS"
-                    class="h-10 w-auto object-contain transition-transform group-hover:scale-110 duration-300">
-                <span class="font-space font-bold text-xl tracking-wider hidden sm:block text-white">RAXY<span
-                        class="text-gradient">LABS</span></span>
-            </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="btn-primary text-sm ring-2 ring-white/10">
+          Get in Touch <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
 
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="index.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Home</a>
-                <a href="about.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">About</a>
-                <a href="services.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Services</a>
-                <a href="projects.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Projects</a>
-                <a href="contact.html"
-                    class="btn-primary text-sm shadow-lg transform translate-y-[-1px] ring-2 ring-white ring-opacity-20">
-                    Get in Touch
-                </a>
+      <button class="md:hidden text-xl text-accent hover:text-white transition-colors p-2" id="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <div class="md:hidden glass-panel mt-3 mx-auto max-w-[94%] hidden" id="mobile-menu" style="border-radius:1.25rem;">
+      <div class="flex flex-col p-6 gap-4 text-center">
+        <a href="index.html"
+          class="text-text-secondary hover:text-accent transition-colors text-sm uppercase tracking-widest font-semibold">Home</a>
+        <a href="about.html"
+          class="text-text-secondary hover:text-accent transition-colors text-sm uppercase tracking-widest font-semibold">About</a>
+        <a href="services.html"
+          class="text-text-secondary hover:text-accent transition-colors text-sm uppercase tracking-widest font-semibold">Services</a>
+        <a href="projects.html"
+          class="text-text-secondary hover:text-accent transition-colors text-sm uppercase tracking-widest font-semibold">Projects</a>
+        <hr class="glow-divider my-1">
+        <a href="contact.html" class="btn-primary w-full text-sm">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Page Content -->
+  <section class="min-h-screen flex items-center justify-center relative py-20 pt-36 overflow-hidden">
+
+    <!-- Ambient blobs -->
+    <div class="blob w-[500px] h-[500px] bg-accent/7 top-[-80px] left-[-150px]"></div>
+    <div class="blob w-[400px] h-[400px] bg-violet/8 bottom-[-60px] right-[-100px]" style="animation-delay:-3.5s;">
+    </div>
+
+    <!-- Grid overlay -->
+    <div class="absolute inset-0 -z-10 pointer-events-none"
+      style="background-image:linear-gradient(rgba(0,212,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.02) 1px,transparent 1px);background-size:60px 60px;">
+    </div>
+
+    <div class="container mx-auto px-6 max-w-6xl w-full">
+
+      <!-- Page intro -->
+      <div class="text-center mb-14 reveal">
+        <div class="section-tag mb-6 mx-auto" style="width:fit-content;">Get in Touch</div>
+        <h1 class="text-5xl md:text-6xl font-bold font-space text-white mb-4 leading-tight">
+          Ready to <span class="text-gradient">Launch</span>?
+        </h1>
+        <p class="text-text-secondary text-lg max-w-lg mx-auto">
+          Tell us about your idea and we'll engineer it into reality. No pitch decks needed.
+        </p>
+      </div>
+
+      <!-- Two-column layout -->
+      <div class="grid lg:grid-cols-5 gap-8 items-start">
+
+        <!-- Left: Info Column -->
+        <div class="lg:col-span-2 space-y-6 reveal">
+
+          <!-- Direct contact options -->
+          <div class="glass-panel p-6" style="border-radius:1.5rem;">
+            <h3 class="font-space font-bold text-white text-sm uppercase tracking-widest mb-5">
+              Reach Us Directly
+            </h3>
+            <div class="space-y-4">
+              <a href="https://wa.me/256702083515" target="_blank"
+                class="flex items-center gap-4 p-4 rounded-xl group transition-all duration-300 hover:-translate-y-0.5"
+                style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.14);">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style="background:rgba(16,185,129,0.15);">
+                  <i class="fab fa-whatsapp text-green-400 text-lg"></i>
+                </div>
+                <div>
+                  <div class="text-[10px] font-space font-bold uppercase tracking-widest text-green-400 mb-0.5">WhatsApp
+                  </div>
+                  <div class="text-text-primary text-sm font-semibold">0702 083 515</div>
+                </div>
+                <i
+                  class="fas fa-arrow-right text-xs text-green-400 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"></i>
+              </a>
+
+              <a href="mailto:raxytechlabs@gmail.com"
+                class="flex items-center gap-4 p-4 rounded-xl group transition-all duration-300 hover:-translate-y-0.5"
+                style="background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.12);">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style="background:rgba(0,212,255,0.12);">
+                  <i class="fas fa-envelope text-accent text-base"></i>
+                </div>
+                <div>
+                  <div class="text-[10px] font-space font-bold uppercase tracking-widest mb-0.5"
+                    style="color:var(--accent);">Email</div>
+                  <div class="text-text-primary text-sm font-semibold">raxytechlabs@gmail.com</div>
+                </div>
+                <i
+                  class="fas fa-arrow-right text-xs text-accent ml-auto opacity-0 group-hover:opacity-100 transition-opacity"></i>
+              </a>
+
+              <div class="flex items-center gap-4 p-4 rounded-xl"
+                style="background:rgba(124,58,237,0.05);border:1px solid rgba(124,58,237,0.12);">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style="background:rgba(124,58,237,0.14);">
+                  <i class="fas fa-map-marker-alt" style="color:#a78bfa;"></i>
+                </div>
+                <div>
+                  <div class="text-[10px] font-space font-bold uppercase tracking-widest text-purple-400 mb-0.5">
+                    Location</div>
+                  <div class="text-text-primary text-sm font-semibold">Kampala, Uganda</div>
+                </div>
+              </div>
             </div>
+          </div>
 
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-2xl text-accent hover:text-white transition-colors" id="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div class="md:hidden glass-panel mt-2 mx-auto max-w-[95%] hidden" id="mobile-menu">
-            <div class="flex flex-col p-6 space-y-4 text-center">
-                <a href="index.html" class="text-gray-300 hover:text-accent transition-colors">Home</a>
-                <a href="about.html" class="text-gray-300 hover:text-accent transition-colors">About</a>
-                <a href="services.html" class="text-gray-300 hover:text-accent transition-colors">Services</a>
-                <a href="projects.html" class="text-gray-300 hover:text-accent transition-colors">Projects</a>
-                <a href="contact.html" class="btn-primary w-full inline-block">Contact Us</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Contact Content -->
-    <section class="min-h-screen flex items-center justify-center relative py-20 pt-32">
-        <!-- Decorative Blobs -->
-        <div class="absolute top-20 left-10 w-96 h-96 bg-accent/10 rounded-full blur-[100px] -z-10 animate-pulse-slow">
-        </div>
-        <div
-            class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] -z-10 animate-pulse-slow">
-        </div>
-
-        <div class="container mx-auto px-6 pt-10">
-            <div
-                class="max-w-4xl mx-auto glass-panel rounded-3xl p-8 md:p-12 border border-accent/15 shadow-2xl relative overflow-hidden">
-
-                <!-- Glow Line -->
+          <!-- What to expect -->
+          <div class="glass-panel p-6" style="border-radius:1.5rem;">
+            <h3 class="font-space font-bold text-white text-sm uppercase tracking-widest mb-5">
+              What Happens Next
+            </h3>
+            <div class="space-y-5">
+              <div class="flex gap-4 items-start">
                 <div
-                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50">
-                </div>
-
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl md:text-5xl font-bold mb-4 font-space">Ready to <span
-                            class="text-gradient">Launch?</span></h2>
-                    <p class="text-text-secondary mb-8 text-lg">Let's build something extraordinary together. Send us a
-                        transmission.</p>
-
-                    <div class="flex flex-col md:flex-row justify-center gap-8 mb-8 pb-8 border-b border-accent/10">
-                        <div
-                            class="flex items-center gap-3 justify-center group bg-white/50 px-6 py-3 rounded-xl hover:bg-white transition-colors">
-                            <i class="fas fa-phone text-primary group-hover:scale-110 transition-transform"></i>
-                            <span class="text-white font-bold">0702 083 515</span>
-                        </div>
-                        <div
-                            class="flex items-center gap-3 justify-center group bg-white/50 px-6 py-3 rounded-xl hover:bg-white transition-colors">
-                            <i class="fas fa-envelope text-accent group-hover:scale-110 transition-transform"></i>
-                            <span class="text-white font-bold">ibrixraxy@gmail.com</span>
-                        </div>
-                    </div>
-                </div>
-
-                <form id="contact-form" action="https://formspree.io/f/mblnyrqo" method="POST" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label
-                                class="text-xs font-mono text-primary font-bold uppercase tracking-wider">Name</label>
-                            <input type="text" name="name" required
-                                class="w-full bg-white/60 border border-gray-200 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder-gray-400"
-                                placeholder="John Doe">
-                        </div>
-                        <div class="space-y-2">
-                            <label
-                                class="text-xs font-mono text-primary font-bold uppercase tracking-wider">Email</label>
-                            <input type="email" name="email" required
-                                class="w-full bg-white/60 border border-gray-200 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder-gray-400"
-                                placeholder="john@example.com">
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-xs font-mono text-primary font-bold uppercase tracking-wider">Message</label>
-                        <textarea rows="4" name="message" required
-                            class="w-full bg-white/60 border border-gray-200 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder-gray-400"
-                            placeholder="Tell us about your project..."></textarea>
-                    </div>
-                    <button type="submit" id="submit-btn"
-                        class="w-full btn-primary text-center font-bold text-lg hover:shadow-xl transform hover:-translate-y-1 mt-4">
-                        Send Transmission
-                    </button>
-                    <p id="form-status" class="text-center font-bold mt-4 hidden"></p>
-                </form>
-
-                <script>
-                    var form = document.getElementById("contact-form");
-                    var status = document.getElementById("form-status");
-                    var submitBtn = document.getElementById("submit-btn");
-
-                    async function handleSubmit(event) {
-                        event.preventDefault();
-                        var data = new FormData(event.target);
-                        submitBtn.disabled = true;
-                        // Loading indicator removed as requested
-
-                        fetch(event.target.action, {
-                            method: form.method,
-                            body: data,
-                            headers: {
-                                'Accept': 'application/json'
-                            }
-                        }).then(response => {
-                            if (response.ok) {
-                                status.innerHTML = "Done";
-                                status.classList.remove('hidden');
-                                status.classList.remove('text-red-600');
-                                status.classList.add('text-green-600');
-                                form.reset();
-                                submitBtn.innerHTML = "Done";
-                                submitBtn.disabled = false;
-                                setTimeout(() => {
-                                    status.classList.add('hidden');
-                                    submitBtn.innerHTML = "Send Transmission";
-                                }, 3000);
-                            } else {
-                                response.json().then(data => {
-                                    if (data.errors) {
-                                        status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-                                    } else {
-                                        status.innerHTML = "Oops! There was a problem submitting your form"
-                                    }
-                                    status.classList.remove('hidden');
-                                    status.classList.add('text-red-600');
-                                    submitBtn.innerHTML = "Send Transmission";
-                                    submitBtn.disabled = false;
-                                }).catch(e => {
-                                    status.innerHTML = "Oops! An error occurred."
-                                    status.classList.remove('hidden');
-                                    status.classList.add('text-red-600');
-                                    submitBtn.innerHTML = "Send Transmission";
-                                    submitBtn.disabled = false;
-                                });
-                            }
-                        }).catch(error => {
-                            status.innerHTML = "Oops! Check your internet connection."
-                            status.classList.remove('hidden');
-                            status.classList.add('text-red-600');
-                            submitBtn.innerHTML = "Send Transmission";
-                            submitBtn.disabled = false;
-                        });
-                    }
-                    form.addEventListener("submit", handleSubmit)
-                </script>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="glass-panel mt-20 border-t border-accent/10">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-2">
-                    <a href="#"
-                        class="text-2xl font-bold font-space tracking-wider text-white flex items-center gap-2 mb-6">
-                        <img src="assets/images/logo.png" class="h-8 w-auto opacity-80" alt="Logo">
-                        <span class="text-accent">RAXY</span><span class="text-cyan-300">LABS</span>
-                    </a>
-                    <p class="text-text-secondary leading-relaxed max-w-sm">
-                        Engineering the future of digital interaction. We build the impossible, one line of code at a
-                        time using cutting-edge technologies.
-                    </p>
+                  class="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold font-space"
+                  style="background:rgba(0,212,255,0.15);color:var(--accent);border:1px solid rgba(0,212,255,0.25);">1
                 </div>
                 <div>
-                    <h4 class="text-accent font-bold font-space uppercase tracking-widest text-sm mb-6">Quick Links
-                    </h4>
-                    <ul class="space-y-3 text-text-secondary">
-                        <li><a href="index.html" class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> Home</a></li>
-                        <li><a href="about.html" class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> About</a></li>
-                        <li><a href="services.html"
-                                class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> Services</a></li>
-                        <li><a href="projects.html"
-                                class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> Projects</a></li>
-                    </ul>
+                  <div class="text-white text-sm font-semibold mb-0.5">We Review Your Message</div>
+                  <p class="text-text-muted text-xs leading-relaxed">Usually within 24 hours on business days.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start">
+                <div
+                  class="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold font-space"
+                  style="background:rgba(16,217,164,0.15);color:var(--emerald);border:1px solid rgba(16,217,164,0.25);">
+                  2</div>
+                <div>
+                  <div class="text-white text-sm font-semibold mb-0.5">Discovery Call</div>
+                  <p class="text-text-muted text-xs leading-relaxed">We'll schedule a quick call to understand your
+                    needs.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start">
+                <div
+                  class="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold font-space"
+                  style="background:rgba(124,58,237,0.15);color:#a78bfa;border:1px solid rgba(124,58,237,0.25);">3</div>
+                <div>
+                  <div class="text-white text-sm font-semibold mb-0.5">Proposal &amp; Timeline</div>
+                  <p class="text-text-muted text-xs leading-relaxed">We'll deliver a clear plan with scope and cost.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="lg:col-span-3 reveal reveal-delay-2">
+          <div class="glass-strong p-8 md:p-10" style="border-radius:2rem;">
+            <!-- Top accent line -->
+            <div class="absolute top-0 left-0 right-0 h-[2px]"
+              style="background:linear-gradient(90deg,var(--accent),var(--emerald));border-radius:2rem 2rem 0 0;"></div>
+
+            <h2 class="text-2xl font-bold font-space text-white mb-2">Send a Transmission</h2>
+            <p class="text-text-muted text-sm mb-8">Fill out the form below and we'll get back to you promptly.</p>
+
+            <form id="contact-form" action="https://formspree.io/f/mblnyrqo" method="POST" class="space-y-5">
+              <div class="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label class="form-label" for="contact-name">Your Name</label>
+                  <input type="text" id="contact-name" name="name" required class="contact-input"
+                    placeholder="John Doe">
                 </div>
                 <div>
-                    <h4 class="text-accent font-bold font-space uppercase tracking-widest text-sm mb-6">Connect</h4>
-                    <ul class="space-y-3 text-text-secondary">
-                        <li><a href="https://wa.me/256702083515"
-                                class="hover:text-accent transition-colors flex items-center gap-3"><span
-                                    class="w-8 h-8 rounded-full bg-green-900/40 text-green-400 flex items-center justify-center"><i
-                                        class="fab fa-whatsapp"></i></span> 0702 083 515</a></li>
-                        <li><a href="mailto:ibrixraxy@gmail.com"
-                                class="hover:text-accent transition-colors flex items-center gap-3"><span
-                                    class="w-8 h-8 rounded-full bg-accent/10 text-accent flex items-center justify-center"><i
-                                        class="fas fa-envelope"></i></span> ibrixraxy@gmail.com</a></li>
-                    </ul>
-                    <div class="flex gap-4 mt-6">
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
-                                class="fab fa-twitter"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
-                                class="fab fa-github"></i></a>
-                    </div>
+                  <label class="form-label" for="contact-email">Email Address</label>
+                  <input type="email" id="contact-email" name="email" required class="contact-input"
+                    placeholder="john@example.com">
                 </div>
-            </div>
-            <div
-                class="border-t border-accent/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-text-secondary">
-                <p>&copy; 2026 RAXY LABS. All rights reserved.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+              </div>
 
-    <script src="js/script.js"></script>
+              <div>
+                <label class="form-label" for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" name="subject" class="contact-input"
+                  placeholder="What's this about?">
+              </div>
+
+              <div>
+                <label class="form-label" for="contact-service">Service Interested In</label>
+                <!-- Hidden real input for form submission -->
+                <input type="hidden" id="contact-service" name="service">
+
+                <div class="custom-dropdown" id="service-dropdown" role="combobox" aria-expanded="false" aria-haspopup="listbox">
+                  <!-- Trigger Button -->
+                  <div class="dropdown-trigger" id="dropdown-trigger" tabindex="0" aria-label="Select a service">
+                    <span class="trigger-left">
+                      <span class="trigger-icon" id="trigger-icon"><i class="fas fa-layer-group"></i></span>
+                      <span id="trigger-text">Select a service...</span>
+                    </span>
+                    <i class="fas fa-chevron-down chevron"></i>
+                  </div>
+
+                  <!-- Options Panel -->
+                  <div class="dropdown-list" role="listbox" id="dropdown-list">
+                    <div class="dropdown-option" data-value="enterprise" data-icon="fas fa-building" data-color="rgba(0,212,255,0.12)" data-icolor="#00d4ff" role="option">
+                      <span class="opt-icon" style="background:rgba(0,212,255,0.1);"><i class="fas fa-building" style="color:#00d4ff;"></i></span>
+                      <span class="opt-label">Enterprise Systems</span>
+                      <i class="fas fa-check opt-check"></i>
+                    </div>
+                    <div class="dropdown-option" data-value="web" data-icon="fas fa-globe" data-color="rgba(16,217,164,0.12)" data-icolor="#10d9a4" role="option">
+                      <span class="opt-icon" style="background:rgba(16,217,164,0.1);"><i class="fas fa-globe" style="color:#10d9a4;"></i></span>
+                      <span class="opt-label">Web Development</span>
+                      <i class="fas fa-check opt-check"></i>
+                    </div>
+                    <div class="dropdown-option" data-value="iot" data-icon="fas fa-microchip" data-color="rgba(124,58,237,0.12)" data-icolor="#a78bfa" role="option">
+                      <span class="opt-icon" style="background:rgba(124,58,237,0.1);"><i class="fas fa-microchip" style="color:#a78bfa;"></i></span>
+                      <span class="opt-label">IoT &amp; Smart Systems</span>
+                      <i class="fas fa-check opt-check"></i>
+                    </div>
+                    <div class="dropdown-option" data-value="mobile" data-icon="fas fa-mobile-alt" data-color="rgba(251,191,36,0.12)" data-icolor="#fbbf24" role="option">
+                      <span class="opt-icon" style="background:rgba(251,191,36,0.08);"><i class="fas fa-mobile-alt" style="color:#fbbf24;"></i></span>
+                      <span class="opt-label">Mobile Applications</span>
+                      <i class="fas fa-check opt-check"></i>
+                    </div>
+                    <div class="dropdown-option" data-value="creative" data-icon="fas fa-paint-brush" data-color="rgba(244,114,182,0.12)" data-icolor="#f472b6" role="option">
+                      <span class="opt-icon" style="background:rgba(244,114,182,0.08);"><i class="fas fa-paint-brush" style="color:#f472b6;"></i></span>
+                      <span class="opt-label">Creative &amp; Branding</span>
+                      <i class="fas fa-check opt-check"></i>
+                    </div>
+                    <div class="dropdown-option" data-value="consulting" data-icon="fas fa-headset" data-color="rgba(34,197,94,0.12)" data-icolor="#4ade80" role="option">
+                      <span class="opt-icon" style="background:rgba(34,197,94,0.08);"><i class="fas fa-headset" style="color:#4ade80;"></i></span>
+                      <span class="opt-label">Consulting &amp; Support</span>
+                      <i class="fas fa-check opt-check"></i>
+                    </div>
+                    <div class="dropdown-option" data-value="other" data-icon="fas fa-question-circle" data-color="rgba(142,163,200,0.12)" data-icolor="#8ea3c8" role="option">
+                      <span class="opt-icon" style="background:rgba(142,163,200,0.08);"><i class="fas fa-question-circle" style="color:#8ea3c8;"></i></span>
+                      <span class="opt-label">Other / Not Sure</span>
+                      <i class="fas fa-check opt-check"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label class="form-label" for="contact-message">Message</label>
+                <textarea id="contact-message" rows="5" name="message" required class="contact-input"
+                  placeholder="Tell us about your project, idea, or question..."></textarea>
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn-primary w-full text-base py-4">
+                <i class="fas fa-paper-plane"></i> Send Transmission
+              </button>
+
+              <p id="form-status" class="text-center font-semibold text-sm mt-3 hidden"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative mt-8 border-t" style="border-color:rgba(0,212,255,0.08);">
+    <div class="container mx-auto px-6 py-14 max-w-6xl">
+      <div class="grid md:grid-cols-4 gap-10 mb-12">
+        <div class="col-span-1 md:col-span-2">
+          <a href="index.html" class="flex items-center gap-3 mb-5 w-fit">
+            <img src="assets/images/logo.png" class="h-9 w-auto opacity-90" alt="Logo">
+            <span class="font-space font-bold text-xl text-white">RAXY<span class="text-gradient">LABS</span></span>
+          </a>
+          <p class="text-text-secondary text-sm leading-relaxed max-w-xs">
+            Engineering the future of digital interaction from Kampala. One line of code at a time, for Africa and
+            beyond.
+          </p>
+          <div class="flex gap-3 mt-6">
+            <a href="#"
+              class="w-9 h-9 rounded-full flex items-center justify-center text-text-muted hover:text-accent transition-all"
+              style="border:1px solid rgba(0,212,255,0.14);"><i class="fab fa-twitter text-sm"></i></a>
+            <a href="#"
+              class="w-9 h-9 rounded-full flex items-center justify-center text-text-muted hover:text-accent transition-all"
+              style="border:1px solid rgba(0,212,255,0.14);"><i class="fab fa-linkedin-in text-sm"></i></a>
+            <a href="#"
+              class="w-9 h-9 rounded-full flex items-center justify-center text-text-muted hover:text-accent transition-all"
+              style="border:1px solid rgba(0,212,255,0.14);"><i class="fab fa-github text-sm"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-space font-bold text-xs uppercase tracking-[0.18em] text-accent mb-6">Navigation</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i>
+                Home</a></li>
+            <li><a href="about.html" class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i>
+                About</a></li>
+            <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i>
+                Services</a></li>
+            <li><a href="projects.html" class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i>
+                Projects</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-space font-bold text-xs uppercase tracking-[0.18em] text-accent mb-6">Contact</h4>
+          <ul class="space-y-4">
+            <li><a href="https://wa.me/256702083515"
+                class="flex items-center gap-3 text-text-secondary hover:text-accent transition-colors text-sm">
+                <span class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                  style="background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.2);"><i
+                    class="fab fa-whatsapp text-green-400 text-sm"></i></span>0702 083 515</a></li>
+            <li><a href="mailto:ibrixraxy@gmail.com"
+                class="flex items-center gap-3 text-text-secondary hover:text-accent transition-colors text-sm">
+                <span class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                  style="background:rgba(0,212,255,0.10);border:1px solid rgba(0,212,255,0.16);"><i
+                    class="fas fa-envelope text-accent text-sm"></i></span>ibrixraxy@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,255,0.20),transparent);"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center pt-8 gap-4">
+        <p class="text-text-muted text-xs font-space">&copy; 2026 RAXY TECH LABS. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-text-muted text-xs hover:text-accent transition-colors">Privacy Policy</a>
+          <a href="#" class="text-text-muted text-xs hover:text-accent transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Contact form handler
+    const form = document.getElementById("contact-form");
+    const statusEl = document.getElementById("form-status");
+    const submitBtn = document.getElementById("submit-btn");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+      try {
+        const resp = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (resp.ok) {
+          statusEl.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Message sent! We\'ll be in touch soon.';
+          statusEl.className = 'text-center font-semibold text-sm mt-3';
+          statusEl.style.color = 'var(--emerald)';
+          statusEl.classList.remove('hidden');
+          form.reset();
+          submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+          submitBtn.disabled = false;
+          setTimeout(() => {
+            statusEl.classList.add('hidden');
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Transmission';
+          }, 4000);
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        statusEl.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>Oops! Something went wrong. Try WhatsApp instead.';
+        statusEl.className = 'text-center font-semibold text-sm mt-3';
+        statusEl.style.color = '#f87171';
+        statusEl.classList.remove('hidden');
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Transmission';
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+
+  <script src="js/script.js"></script>
+
+  <script>
+    /* ── Custom Service Dropdown ─────────────────────────── */
+    (function () {
+      const dropdown   = document.getElementById('service-dropdown');
+      const trigger    = document.getElementById('dropdown-trigger');
+      const triggerTxt = document.getElementById('trigger-text');
+      const triggerIcon= document.getElementById('trigger-icon');
+      const hiddenInput= document.getElementById('contact-service');
+      const options    = dropdown.querySelectorAll('.dropdown-option');
+
+      function openDropdown() {
+        dropdown.classList.add('open');
+        dropdown.setAttribute('aria-expanded', 'true');
+      }
+      function closeDropdown() {
+        dropdown.classList.remove('open');
+        dropdown.setAttribute('aria-expanded', 'false');
+      }
+      function toggleDropdown() {
+        dropdown.classList.contains('open') ? closeDropdown() : openDropdown();
+      }
+
+      // Click trigger
+      trigger.addEventListener('click', toggleDropdown);
+
+      // Keyboard: Enter/Space opens, Escape closes, ArrowUp/Down navigates
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(); }
+        if (e.key === 'Escape') closeDropdown();
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          openDropdown();
+          options[0] && options[0].focus();
+        }
+      });
+
+      options.forEach((opt, i) => {
+        opt.setAttribute('tabindex', '0');
+
+        // Select on click
+        opt.addEventListener('click', () => selectOption(opt));
+
+        // Keyboard navigation inside list
+        opt.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectOption(opt); }
+          if (e.key === 'Escape') { closeDropdown(); trigger.focus(); }
+          if (e.key === 'ArrowDown' && i < options.length - 1) { e.preventDefault(); options[i + 1].focus(); }
+          if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            i > 0 ? options[i - 1].focus() : trigger.focus();
+          }
+        });
+      });
+
+      function selectOption(opt) {
+        const value   = opt.dataset.value;
+        const label   = opt.querySelector('.opt-label').textContent;
+        const iconCls = opt.dataset.icon;
+        const iconBg  = opt.dataset.color;
+        const iconCol = opt.dataset.icolor;
+
+        // Update hidden input
+        hiddenInput.value = value;
+
+        // Update trigger appearance
+        trigger.classList.add('selected');
+        triggerTxt.textContent = label;
+        triggerIcon.style.background = iconBg;
+        triggerIcon.innerHTML = `<i class="${iconCls}" style="color:${iconCol};"></i>`;
+
+        // Mark active
+        options.forEach(o => o.classList.remove('active'));
+        opt.classList.add('active');
+
+        closeDropdown();
+        trigger.focus();
+      }
+
+      // Close when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) closeDropdown();
+      });
+    })();
+  </script>
 </body>
 
 </html>

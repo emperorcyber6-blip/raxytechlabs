@@ -2,441 +2,457 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Raxy Tech Labs | African Tech Startup & IoT Innovators</title>
-    <meta name="description"
-        content="Learn about Raxy Tech Labs, a Ugandan software development agency building scalable software and IoT solutions for Africa. Innovators in EdTech, FinTech, and Smart Systems.">
-    <meta property="og:site_name" content="Raxy Tech Labs" />
-    <meta property="og:title" content="About Raxy Tech Labs – Software & Digital Solutions Agency" />
-    <meta property="og:type" content="website" />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Raxy Tech Labs | African Tech Startup & IoT Innovators</title>
+  <meta name="description"
+    content="Learn about Raxy Tech Labs, a Ugandan software development agency building scalable software and IoT solutions for Africa. Innovators in EdTech, FinTech, and Smart Systems.">
+  <meta property="og:site_name" content="Raxy Tech Labs" />
+  <meta property="og:title" content="About Raxy Tech Labs – Software & Digital Solutions Agency" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#0f2547',
-                        'primary-dark': '#091a33',
-                        'primary-light': '#1a3a6b',
-                        'accent-glow': 'rgba(0, 180, 216, 0.5)',
-                        'accent': '#00b4d8',
-                        'text-primary': '#e8edf5',
-                        'text-secondary': '#8b9dc3',
-                    },
-                    fontFamily: {
-                        'space': ['"Space Grotesk"', 'sans-serif'],
-                        'sans': ['"Outfit"', 'sans-serif'],
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                }
-            }
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary':        '#0a1628',
+            'primary-dark':   '#060e1c',
+            'primary-mid':    '#0f2040',
+            'primary-light':  '#162d55',
+            'accent':         '#00d4ff',
+            'accent-muted':   '#00a8cc',
+            'emerald':        '#10d9a4',
+            'violet':         '#7c3aed',
+            'text-primary':   '#edf2fb',
+            'text-secondary': '#8ea3c8',
+            'text-muted':     '#4d6080',
+          },
+          fontFamily: {
+            'space': ['"Space Grotesk"', 'sans-serif'],
+            'sans':  ['"Outfit"', 'sans-serif'],
+          },
         }
-    </script>
+      }
+    }
+  </script>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="text-text-primary overflow-x-hidden font-sans antialiased">
-    <!-- Background Animation Canvas -->
-    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-30"></canvas>
+  <!-- Background Canvas -->
+  <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-4 px-4 transition-all duration-300" id="navbar">
-        <div class="glass-panel container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
-            <a href="index.html" class="flex items-center gap-2 group">
-                <img src="assets/images/logo.png" alt="RAXY TECH LABS"
-                    class="h-10 w-auto object-contain transition-transform group-hover:scale-110 duration-300">
-                <span class="font-space font-bold text-xl tracking-wider hidden sm:block text-white">RAXY<span
-                        class="text-gradient">LABS</span></span>
-            </a>
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 top-5 px-5 transition-all duration-500" id="navbar">
+    <div class="glass-panel container mx-auto px-6 py-3 flex justify-between items-center max-w-6xl"
+         style="border-radius:9999px;">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="assets/images/logo.png" alt="RAXY TECH LABS"
+          class="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-110">
+        <span class="font-space font-bold text-lg tracking-wide hidden sm:block text-white">
+          RAXY<span class="text-gradient">LABS</span>
+        </span>
+      </a>
 
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="index.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Home</a>
-                <a href="about.html"
-                    class="nav-link text-sm font-bold uppercase tracking-widest text-accent border-b-2 border-accent">About</a>
-                <a href="services.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Services</a>
-                <a href="projects.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Projects</a>
-                <a href="contact.html"
-                    class="btn-primary text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
-                    Get in Touch
-                </a>
-            </div>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"    class="nav-link">Home</a>
+        <a href="about.html"    class="nav-link active">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html"  class="btn-primary text-sm">
+          Get in Touch <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
 
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-2xl text-accent hover:text-white transition-colors" id="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div class="md:hidden glass-panel mt-2 mx-auto max-w-[95%] hidden" id="mobile-menu">
-            <div class="flex flex-col p-6 space-y-4 text-center">
-                <a href="index.html" class="text-gray-300 hover:text-accent transition-colors">Home</a>
-                <a href="about.html" class="text-accent font-bold">About</a>
-                <a href="services.html" class="text-gray-300 hover:text-accent transition-colors">Services</a>
-                <a href="projects.html" class="text-gray-300 hover:text-accent transition-colors">Projects</a>
-                <a href="contact.html" class="btn-primary w-full inline-block">Contact Us</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- About Header -->
-    <section class="min-h-[50vh] flex items-center justify-center relative pt-32 pb-10">
-        <!-- Decorative Blobs -->
-        <div
-            class="absolute top-1/2 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[100px] -z-10 animate-pulse-slow">
-        </div>
-        <div
-            class="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-accent/10 rounded-full blur-[80px] -z-10 animate-pulse-slow">
-        </div>
-
-        <div class="container mx-auto px-6 text-center z-10" data-aos="fade-up">
-            <div class="inline-block px-4 py-2 bg-primary/50 backdrop-blur-sm rounded-full border border-accent/20 mb-6">
-                <h2 class="text-accent font-space text-xs font-bold uppercase tracking-[0.3em]">Behind the Code</h2>
-            </div>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 font-space">Who We Are</h1>
-            <p class="text-text-secondary max-w-2xl mx-auto text-lg">
-                Building the future requires more than just code. It requires vision, discipline, and the courage to
-                defy limits.
-            </p>
-        </div>
-    </section>
-
-    <!-- About Content -->
-    <section class="py-20 relative">
-        <div class="container mx-auto px-6">
-            <div class="glass-panel p-10 md:p-16 rounded-3xl border border-accent/10 relative overflow-hidden shadow-xl">
-                <!-- Inner Glow -->
-                <div class="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-[80px]"></div>
-
-                <div class="mb-16">
-                    <h3 class="text-2xl text-accent font-bold mb-8 font-space border-l-4 border-accent pl-4">THE RAXY
-                        LABS STORY</h3>
-
-                    <p class="text-gray-300 leading-relaxed mb-6 text-lg">
-                        <strong class="text-accent">RAXY TECH LABS</strong>, a rising African tech startup and software
-                        agency, was born in
-                        Kampala from curiosity, not capital.
-                    </p>
-                    <p class="text-text-secondary leading-relaxed mb-8">
-                        It started with a young technologist who didn’t wait for permission, funding, or perfect
-                        conditions.
-                        What began as experimenting with code, systems, and hardware grew into a mindset:
-                        <span class="text-accent font-semibold bg-accent/10 px-1 rounded">build first, learn first,
-                            improve relentlessly.</span>
-                    </p>
-
-                    <h4 class="text-xl text-accent font-bold mb-4 font-space">More Than a Traditional Agency</h4>
-                    <p class="text-text-secondary leading-relaxed mb-8">
-                        RAXY LABS is not a traditional agency — it is a lab.
-                        A place where software, systems, and ideas are tested, broken, and rebuilt stronger.
-                    </p>
-
-                    <div class="grid md:grid-cols-2 gap-8 mb-10">
-                        <div
-                            class="bg-primary-dark/40 p-6 rounded-xl border border-accent/15 hover:border-accent/30 transition-colors">
-                            <h5 class="text-white font-bold mb-4 font-space flex items-center gap-2"><i
-                                    class="fas fa-check-circle text-accent"></i> Real Problems, Real Solutions</h5>
-                            <ul class="space-y-3 text-text-secondary text-sm">
-                                <li class="flex gap-2"><span class="text-accent">>></span> Systems that help businesses
-                                    operate</li>
-                                <li class="flex gap-2"><span class="text-accent">>></span> Platforms that manage data
-                                    and users</li>
-                                <li class="flex gap-2"><span class="text-accent">>></span> Technology that connects
-                                    physical & digital worlds</li>
-                            </ul>
-                        </div>
-                        <div
-                            class="bg-primary-dark/40 p-6 rounded-xl border border-accent/15 hover:border-accent/30 transition-colors">
-                            <h5 class="text-white font-bold mb-4 font-space flex items-center gap-2"><i
-                                    class="fas fa-flask text-accent"></i> Our Experimentation</h5>
-                            <ul class="space-y-3 text-text-secondary text-sm">
-                                <li class="flex gap-2"><span class="text-accent">>></span> Smart systems & IoT
-                                    prototypes</li>
-                                <li class="flex gap-2"><span class="text-accent">>></span> Early robotics ideas</li>
-                                <li class="flex gap-2"><span class="text-accent">>></span> Platforms still under
-                                    construction</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h4 class="text-xl text-accent font-bold mb-4 font-space">The Vision</h4>
-                    <p class="text-text-secondary leading-relaxed mb-4">
-                        The vision goes further than today’s projects. RAXY LABS exists to grow into:
-                    </p>
-                    <ul class="list-none grid sm:grid-cols-2 gap-2 text-text-secondary mb-10 ml-4">
-                        <li class="flex items-center gap-2"><i class="fas fa-microchip text-accent/60"></i> Intelligent
-                            systems</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-robot text-accent/60"></i> Robotics and
-                            automation</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-vr-cardboard text-accent/60"></i> Games,
-                            VFX, and immersive experiences</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-globe-africa text-accent/60"></i> Tools
-                            built for Africa, but ready for the world</li>
-                    </ul>
-
-                    <div
-                        class="border-l-4 border-accent pl-6 py-2 italic text-text-secondary mb-12 bg-primary-dark/40 rounded-r-lg">
-                        "RAXY LABS is still early — and that’s intentional. Because this is not the end product.
-                        This is the beginning of something being engineered for the long term."
-                    </div>
-
-                    <p
-                        class="text-center text-gray-300 text-lg font-space mb-8 bg-primary/40 p-6 rounded-2xl border border-primary/5">
-                        The agency operates under one identity, powered by three forces:<br>
-                        <span class="text-accent font-bold">RAXY</span> • <span
-                            class="text-primary-light font-bold">MUHOOZI</span> • <span
-                            class="text-accent font-bold">NJUKI</span><br>
-                        <span class="text-sm text-text-secondary font-sans normal-case block mt-2">Different strengths.
-                            One direction. One lab.</span>
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Executive 1: RAXY -->
-                    <button data-modal="raxy-modal"
-                        class="p-6 bg-primary/40 rounded-2xl border border-accent/10 text-center hover:border-accent transition-all duration-300 group block hover:-translate-y-2 relative w-full shadow-sm hover:shadow-xl">
-                        <div
-                            class="h-32 w-32 mx-auto rounded-full overflow-hidden border-2 border-accent mb-4 shadow-[0_0_15px_rgba(123,44,191,0.2)]">
-                            <img src="assets/images/Raxy.JPG" alt="Raxy" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-1 group-hover:text-accent transition-colors">
-                            MULINDWA IBRAHIM</h3>
-                        <p class="text-xs text-accent uppercase tracking-widest mb-2 font-bold">Founder (RAXY)</p>
-                        <p class="text-[10px] text-text-secondary line-clamp-2 px-2">
-                            A technologist building systems, platforms, and experimental tech with a long-term vision.
-                        </p>
-                    </button>
-
-                    <!-- Executive 2: ROAN -->
-                    <button data-modal="roan-modal"
-                        class="p-6 bg-primary/40 rounded-2xl border border-accent/10 text-center hover:border-primary-light transition-all duration-300 group w-full shadow-sm hover:shadow-xl hover:-translate-y-2">
-                        <div
-                            class="h-32 w-32 mx-auto rounded-full overflow-hidden border-2 border-cyan-400 mb-4 shadow-[0_0_15px_rgba(157,78,221,0.2)]">
-                            <img src="assets/images/Roan.jpg" alt="Roan" class="w-full h-full object-cover">
-                        </div>
-                        <h3
-                            class="text-xl font-bold text-white mb-1 group-hover:text-primary-light transition-colors">
-                            MUHOOZI ERIC
-                        </h3>
-                        <p class="text-xs text-primary-light uppercase tracking-widest font-bold">Executive (ROAN)</p>
-                    </button>
-
-                    <!-- Executive 3: HIVE -->
-                    <button data-modal="hive-modal"
-                        class="p-6 bg-primary/40 rounded-2xl border border-accent/10 text-center hover:border-accent transition-all duration-300 group w-full shadow-sm hover:shadow-xl hover:-translate-y-2">
-                        <div
-                            class="h-32 w-32 mx-auto rounded-full bg-gradient-to-br from-gray-800 to-black flex items-center justify-center border-2 border-accent mb-4 shadow-[0_0_15px_rgba(255,215,0,0.2)]">
-                            <span class="font-space font-bold text-2xl text-white">H</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-1 group-hover:text-accent transition-colors">
-                            NJUKI JOSEPH
-                        </h3>
-                        <p class="text-xs text-accent uppercase tracking-widest font-bold">Executive (HIVE)</p>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="glass-panel mt-20 border-t border-accent/10">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-2">
-                    <a href="#"
-                        class="text-2xl font-bold font-space tracking-wider text-white flex items-center gap-2 mb-6">
-                        <img src="assets/images/logo.png" class="h-8 w-auto opacity-80" alt="Logo">
-                        <span class="text-accent">RAXY</span><span class="text-cyan-300">LABS</span>
-                    </a>
-                    <p class="text-text-secondary leading-relaxed max-w-sm">
-                        Engineering the future of digital interaction. We build the impossible, one line of code at a
-                        time using cutting-edge technologies.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-accent font-bold font-space uppercase tracking-widest text-sm mb-6">Quick Links
-                    </h4>
-                    <ul class="space-y-3 text-text-secondary">
-                        <li><a href="index.html" class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> Home</a></li>
-                        <li><a href="about.html" class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> About</a></li>
-                        <li><a href="services.html"
-                                class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> Services</a></li>
-                        <li><a href="projects.html"
-                                class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> Projects</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-accent font-bold font-space uppercase tracking-widest text-sm mb-6">Connect</h4>
-                    <ul class="space-y-3 text-text-secondary">
-                        <li><a href="https://wa.me/256702083515"
-                                class="hover:text-accent transition-colors flex items-center gap-3"><span
-                                    class="w-8 h-8 rounded-full bg-green-900/40 text-green-400 flex items-center justify-center"><i
-                                        class="fab fa-whatsapp"></i></span> 0702 083 515</a></li>
-                        <li><a href="mailto:ibrixraxy@gmail.com"
-                                class="hover:text-accent transition-colors flex items-center gap-3"><span
-                                    class="w-8 h-8 rounded-full bg-accent/10 text-accent flex items-center justify-center"><i
-                                        class="fas fa-envelope"></i></span> ibrixraxy@gmail.com</a></li>
-                    </ul>
-                    <div class="flex gap-4 mt-6">
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
-                                class="fab fa-twitter"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
-                                class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="border-t border-accent/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-text-secondary">
-                <p>&copy; 2026 RAXY LABS. All rights reserved.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
-
-    <!-- Modals -->
-    <!-- Raxy Modal -->
-    <div id="raxy-modal" class="modal-overlay px-4">
-        <div class="modal-content glass-panel relative p-8 md:p-12 border border-accent/15 shadow-2xl">
-            <button class="modal-close top-4 right-4">
-                <i class="fas fa-times"></i>
-            </button>
-
-            <div class="flex flex-col md:flex-row gap-8 mb-8">
-                <div class="md:w-1/3">
-                    <div
-                        class="h-48 w-48 rounded-full overflow-hidden border-4 border-accent mb-4 shadow-[0_0_25px_rgba(123,44,191,0.3)] mx-auto md:mx-0">
-                        <img src="assets/images/Raxy.JPG" alt="Raxy" class="w-full h-full object-cover">
-                    </div>
-                </div>
-                <div class="md:w-2/3">
-                    <h3 class="text-3xl font-bold text-white mb-2 font-space">MULINDWA IBRAHIM (RAXY)</h3>
-                    <p
-                        class="text-accent uppercase tracking-widest text-sm mb-6 border-l-2 border-accent pl-3 font-bold">
-                        Founder — RAXY LABS</p>
-
-                    <p class="text-text-secondary leading-relaxed mb-4">
-                        Mulindwa Ibrahim is a self-taught technologist driven by curiosity, experimentation, and
-                        long-term
-                        vision. He began by exploring software, systems, and hardware not as a business, but as a way to
-                        understand how technology really works.
-                    </p>
-                    <p class="text-text-secondary leading-relaxed mb-6">
-                        Without funding or formal backing, he focused on building first — learning through trial,
-                        failure, and iteration. That mindset led to the creation of <strong class="text-accent">RAXY
-                            LABS</strong> — not as a typical company, but as a technology lab.
-                    </p>
-                </div>
-            </div>
-
-            <div class="bg-primary-dark/60 p-6 rounded-xl border border-accent/15 mb-8">
-                <h4 class="text-accent font-bold mb-4 font-space">Key Milestones</h4>
-                <ul class="space-y-3 text-text-secondary text-sm">
-                    <li class="flex gap-2 items-start"><span class="text-accent mt-1">>></span> Built and delivered
-                        real-world web platforms and payment integrations</li>
-                    <li class="flex gap-2 items-start"><span class="text-accent mt-1">>></span> Developed sell-ready
-                        systems such as POS and voting platforms</li>
-                    <li class="flex gap-2 items-start"><span class="text-accent mt-1">>></span> Created internal
-                        prototypes in smart systems and IoT</li>
-                    <li class="flex gap-2 items-start"><span class="text-accent mt-1">>></span> Planned long-term
-                        platforms like FX Journal and an Islamic digital platform</li>
-                </ul>
-            </div>
-
-            <p class="italic text-gray-400 text-center border-t border-accent/10 pt-6">
-                "Mulindwa Ibrahim is not building for quick wins. He is engineering foundations — patiently,
-                deliberately, and with scale in mind."
-            </p>
-        </div>
+      <button class="md:hidden text-xl text-accent hover:text-white transition-colors p-2" id="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
 
-    <!-- Roan Modal -->
-    <div id="roan-modal" class="modal-overlay px-4">
-        <div class="modal-content glass-panel relative p-8 md:p-12 max-w-2xl border border-accent/15 shadow-2xl">
-            <button class="modal-close top-4 right-4">
-                <i class="fas fa-times"></i>
-            </button>
-
-            <div class="text-center">
-                <div
-                    class="h-40 w-40 rounded-full overflow-hidden border-4 border-cyan-400 mb-6 shadow-[0_0_25px_rgba(157,78,221,0.3)] mx-auto">
-                    <img src="assets/images/Roan.jpg" alt="Roan" class="w-full h-full object-cover">
-                </div>
-
-                <h3 class="text-3xl font-bold text-white mb-2 font-space">MUHOOZI ERIC (ROAN)</h3>
-                <p class="text-primary-light uppercase tracking-widest text-sm mb-6 font-bold">Executive</p>
-
-                <p class="text-text-secondary leading-relaxed">
-                    Detailed profile coming soon.
-                </p>
-            </div>
-        </div>
+    <div class="md:hidden glass-panel mt-3 mx-auto max-w-[94%] hidden" id="mobile-menu" style="border-radius:1.25rem;">
+      <div class="flex flex-col p-6 gap-4 text-center">
+        <a href="index.html"    class="text-text-secondary hover:text-accent transition-colors text-sm uppercase tracking-widest font-semibold">Home</a>
+        <a href="about.html"    class="text-accent font-bold font-space text-sm uppercase tracking-widest">About</a>
+        <a href="services.html" class="text-text-secondary hover:text-accent transition-colors text-sm uppercase tracking-widest font-semibold">Services</a>
+        <a href="projects.html" class="text-text-secondary hover:text-accent transition-colors text-sm uppercase tracking-widest font-semibold">Projects</a>
+        <hr class="glow-divider my-1">
+        <a href="contact.html"  class="btn-primary w-full text-sm">Contact Us</a>
+      </div>
     </div>
+  </nav>
 
-    <!-- Hive Modal -->
-    <div id="hive-modal" class="modal-overlay px-4">
-        <div class="modal-content glass-panel relative p-8 md:p-12 max-w-2xl border border-accent/15 shadow-2xl">
-            <button class="modal-close top-4 right-4">
-                <i class="fas fa-times"></i>
-            </button>
+  <!-- Page Header -->
+  <section class="min-h-[52vh] flex items-center justify-center relative pt-36 pb-12 overflow-hidden">
+    <div class="blob w-[500px] h-[500px] bg-accent/7 top-[-80px] right-[-120px]"></div>
+    <div class="blob w-[350px] h-[350px] bg-violet/8 bottom-0 left-[-60px]" style="animation-delay:-3s;"></div>
+    <div class="absolute inset-0 -z-10 pointer-events-none"
+         style="background-image:linear-gradient(rgba(0,212,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.02) 1px,transparent 1px);background-size:60px 60px;"></div>
 
-            <div class="text-center">
-                <div
-                    class="h-40 w-40 rounded-full bg-gradient-to-br from-gray-800 to-black flex items-center justify-center border-4 border-accent mb-6 shadow-[0_0_25px_rgba(255,215,0,0.3)] mx-auto">
-                    <span class="font-space font-bold text-4xl text-white">H</span>
-                </div>
-
-                <h3 class="text-3xl font-bold text-white mb-2 font-space">NJUKI JOSEPH (HIVE)</h3>
-                <p class="text-accent uppercase tracking-widest text-sm mb-6 font-bold">Executive</p>
-
-                <p class="text-text-secondary leading-relaxed">
-                    Detailed profile coming soon.
-                </p>
-            </div>
-        </div>
+    <div class="container mx-auto px-6 text-center z-10 reveal">
+      <div class="section-tag mb-6 mx-auto" style="width:fit-content;">Behind the Code</div>
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 font-space text-white leading-tight">
+        Who We <span class="text-gradient">Are</span>
+      </h1>
+      <p class="text-text-secondary max-w-xl mx-auto text-lg leading-relaxed">
+        Building the future requires more than just code. It takes vision, discipline, and the courage to defy limits.
+      </p>
     </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="py-20 relative">
+    <div class="container mx-auto px-6 max-w-6xl">
+
+      <!-- Main Story Card -->
+      <div class="glass-panel p-10 md:p-16 relative overflow-hidden mb-16 reveal" style="border-radius:2rem;">
+        <!-- Inner accent glow -->
+        <div class="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none"
+             style="background:radial-gradient(circle,rgba(0,212,255,0.06) 0%,transparent 70%);"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full pointer-events-none"
+             style="background:radial-gradient(circle,rgba(124,58,237,0.06) 0%,transparent 70%);"></div>
+
+        <!-- Section heading -->
+        <div class="flex items-center gap-4 mb-10">
+          <div style="width:4px;height:2rem;background:linear-gradient(to bottom,var(--accent),var(--emerald));border-radius:999px;"></div>
+          <h2 class="text-2xl font-bold font-space text-accent uppercase tracking-widest">The Raxy Labs Story</h2>
+        </div>
+
+        <p class="text-text-primary leading-relaxed mb-6 text-lg">
+          <strong style="color:var(--accent);">RAXY TECH LABS</strong>, a rising African tech startup and software agency, was born in Kampala from curiosity — not capital.
+        </p>
+        <p class="text-text-secondary leading-relaxed mb-10">
+          It started with a young technologist who didn't wait for permission, funding, or perfect conditions.
+          What began as experimenting with code, systems, and hardware grew into a mindset:
+          <span class="font-semibold px-2 py-0.5 rounded" style="color:var(--accent);background:rgba(0,212,255,0.08);">build first, learn first, improve relentlessly.</span>
+        </p>
+
+        <!-- Two-column highlight boxes -->
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <div class="p-6 rounded-2xl border reveal reveal-delay-1"
+               style="background:rgba(0,212,255,0.04);border-color:rgba(0,212,255,0.12);">
+            <h4 class="font-space font-bold text-white mb-4 flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(0,212,255,0.12);">
+                <i class="fas fa-check-circle text-sm" style="color:var(--accent);"></i>
+              </span>
+              Real Problems, Real Solutions
+            </h4>
+            <ul class="space-y-3 text-text-secondary text-sm">
+              <li class="flex gap-2"><span style="color:var(--accent);">&rsaquo;</span> Systems that help businesses operate efficiently</li>
+              <li class="flex gap-2"><span style="color:var(--accent);">&rsaquo;</span> Platforms that manage data and users at scale</li>
+              <li class="flex gap-2"><span style="color:var(--accent);">&rsaquo;</span> Technology connecting physical &amp; digital worlds</li>
+            </ul>
+          </div>
+          <div class="p-6 rounded-2xl border reveal reveal-delay-2"
+               style="background:rgba(124,58,237,0.04);border-color:rgba(124,58,237,0.14);">
+            <h4 class="font-space font-bold text-white mb-4 flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(124,58,237,0.14);">
+                <i class="fas fa-flask text-sm" style="color:#a78bfa;"></i>
+              </span>
+              Our Lab Experimentation
+            </h4>
+            <ul class="space-y-3 text-text-secondary text-sm">
+              <li class="flex gap-2"><span style="color:#a78bfa;">&rsaquo;</span> Smart systems &amp; IoT prototypes</li>
+              <li class="flex gap-2"><span style="color:#a78bfa;">&rsaquo;</span> Early robotics &amp; automation ideas</li>
+              <li class="flex gap-2"><span style="color:#a78bfa;">&rsaquo;</span> Experimental platforms under R&amp;D</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- The Vision -->
+        <div class="mb-10">
+          <h3 class="text-xl font-bold font-space text-white mb-4 flex items-center gap-3">
+            <span class="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(16,217,164,0.14);">
+              <i class="fas fa-eye text-xs" style="color:var(--emerald);"></i>
+            </span>
+            The Vision
+          </h3>
+          <p class="text-text-secondary leading-relaxed mb-6">
+            RAXY LABS exists to grow into something bigger — not just an agency, but a movement of African-built technology:
+          </p>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div class="flex items-center gap-3 p-3 rounded-xl text-sm text-text-secondary"
+                 style="background:rgba(0,212,255,0.04);border:1px solid rgba(0,212,255,0.08);">
+              <i class="fas fa-microchip" style="color:var(--accent);width:16px;"></i> Intelligent systems &amp; AI
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-xl text-sm text-text-secondary"
+                 style="background:rgba(0,212,255,0.04);border:1px solid rgba(0,212,255,0.08);">
+              <i class="fas fa-robot" style="color:var(--accent);width:16px;"></i> Robotics and automation
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-xl text-sm text-text-secondary"
+                 style="background:rgba(0,212,255,0.04);border:1px solid rgba(0,212,255,0.08);">
+              <i class="fas fa-vr-cardboard" style="color:var(--accent);width:16px;"></i> Games, VFX &amp; immersive tech
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-xl text-sm text-text-secondary"
+                 style="background:rgba(0,212,255,0.04);border:1px solid rgba(0,212,255,0.08);">
+              <i class="fas fa-globe-africa" style="color:var(--accent);width:16px;"></i> Built for Africa, ready for the world
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote -->
+        <div class="p-6 rounded-2xl border-l-4 mb-10 italic"
+             style="border-left-color:var(--accent);background:rgba(0,212,255,0.04);">
+          <p class="text-text-secondary leading-relaxed">
+            "RAXY LABS is still early — and that's intentional. Because this is not the end product.
+            This is the beginning of something being engineered for the long term."
+          </p>
+        </div>
+
+        <!-- Identity -->
+        <div class="text-center p-8 rounded-2xl border" style="background:rgba(10,22,40,0.60);border-color:rgba(0,212,255,0.10);">
+          <p class="text-text-secondary text-sm mb-3">The agency operates under one identity, powered by three forces:</p>
+          <p class="font-space font-bold text-xl tracking-wider">
+            <span style="color:var(--accent);">RAXY</span>
+            <span class="text-text-muted mx-3">•</span>
+            <span style="color:#a78bfa;">MUHOOZI</span>
+            <span class="text-text-muted mx-3">•</span>
+            <span style="color:var(--emerald);">NJUKI</span>
+          </p>
+          <p class="text-text-muted text-xs mt-3 tracking-widest uppercase">Different strengths. One direction. One lab.</p>
+        </div>
+      </div>
+
+      <!-- Team Section -->
+      <div class="text-center mb-12 reveal">
+        <div class="section-tag mb-5 mx-auto" style="width:fit-content;">The People</div>
+        <h2 class="text-3xl md:text-4xl font-bold font-space text-white">Meet the Executives</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- RAXY -->
+        <button data-modal="raxy-modal"
+          class="card p-8 text-center group w-full hover:-translate-y-2 reveal reveal-delay-1" style="border-radius:1.5rem;">
+          <div class="h-28 w-28 mx-auto rounded-full overflow-hidden mb-5 ring-2 ring-offset-2"
+               style="ring-color:var(--accent);ring-offset-color:#060e1c;box-shadow:0 0 20px rgba(0,212,255,0.25);">
+            <img src="assets/images/Raxy.JPG" alt="Raxy" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-lg font-bold font-space text-white mb-1 group-hover:text-accent transition-colors">
+            MULINDWA IBRAHIM
+          </h3>
+          <p class="text-xs font-space font-bold uppercase tracking-widest mb-3" style="color:var(--accent);">
+            Founder &nbsp;·&nbsp; RAXY
+          </p>
+          <p class="text-text-muted text-xs leading-relaxed px-2">
+            Self-taught technologist building systems, platforms, and experimental tech with a long-term vision.
+          </p>
+          <div class="mt-5 text-xs font-semibold" style="color:var(--accent);">
+            View Profile <i class="fas fa-chevron-right text-[10px] ml-1"></i>
+          </div>
+        </button>
+
+        <!-- ROAN -->
+        <button data-modal="roan-modal"
+          class="card p-8 text-center group w-full hover:-translate-y-2 reveal reveal-delay-2" style="border-radius:1.5rem;">
+          <div class="h-28 w-28 mx-auto rounded-full overflow-hidden mb-5 ring-2 ring-offset-2"
+               style="box-shadow:0 0 20px rgba(124,58,237,0.30);">
+            <img src="assets/images/Roan.jpg" alt="Roan" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-lg font-bold font-space text-white mb-1 group-hover:text-purple-400 transition-colors">
+            MUHOOZI ERIC
+          </h3>
+          <p class="text-xs font-space font-bold uppercase tracking-widest mb-3 text-purple-400">
+            Executive &nbsp;·&nbsp; ROAN
+          </p>
+          <p class="text-text-muted text-xs leading-relaxed px-2">
+            Strategic executive driving business growth and operational excellence at Raxy Labs.
+          </p>
+          <div class="mt-5 text-xs font-semibold text-purple-400">
+            View Profile <i class="fas fa-chevron-right text-[10px] ml-1"></i>
+          </div>
+        </button>
+
+        <!-- HIVE -->
+        <button data-modal="hive-modal"
+          class="card p-8 text-center group w-full hover:-translate-y-2 reveal reveal-delay-3" style="border-radius:1.5rem;">
+          <div class="h-28 w-28 mx-auto rounded-full overflow-hidden mb-5 ring-2 ring-offset-2 flex items-center justify-center"
+               style="background:linear-gradient(135deg,#1a2a4a,#0a1225);box-shadow:0 0 20px rgba(16,217,164,0.20);">
+            <span class="font-space font-bold text-3xl text-white">H</span>
+          </div>
+          <h3 class="text-lg font-bold font-space text-white mb-1 group-hover:text-emerald-400 transition-colors"
+              style="--tw-text-opacity:1;">
+            NJUKI JOSEPH
+          </h3>
+          <p class="text-xs font-space font-bold uppercase tracking-widest mb-3" style="color:var(--emerald);">
+            Executive &nbsp;·&nbsp; HIVE
+          </p>
+          <p class="text-text-muted text-xs leading-relaxed px-2">
+            Creative and community executive connecting the Raxy Labs brand with people and impact.
+          </p>
+          <div class="mt-5 text-xs font-semibold" style="color:var(--emerald);">
+            View Profile <i class="fas fa-chevron-right text-[10px] ml-1"></i>
+          </div>
+        </button>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-20 text-center reveal">
+        <a href="contact.html" class="btn-primary mr-4">
+          <i class="fas fa-paper-plane"></i> Work With Us
+        </a>
+        <a href="services.html" class="btn-outline">
+          Our Services <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative mt-8 border-t" style="border-color:rgba(0,212,255,0.08);">
+    <div class="container mx-auto px-6 py-14 max-w-6xl">
+      <div class="grid md:grid-cols-4 gap-10 mb-12">
+        <div class="col-span-1 md:col-span-2">
+          <a href="index.html" class="flex items-center gap-3 mb-5 w-fit">
+            <img src="assets/images/logo.png" class="h-9 w-auto opacity-90" alt="Logo">
+            <span class="font-space font-bold text-xl text-white">RAXY<span class="text-gradient">LABS</span></span>
+          </a>
+          <p class="text-text-secondary text-sm leading-relaxed max-w-xs">
+            Engineering the future of digital interaction from Kampala. One line of code at a time, for Africa and beyond.
+          </p>
+          <div class="flex gap-3 mt-6">
+            <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-text-muted hover:text-accent transition-all" style="border:1px solid rgba(0,212,255,0.14);"><i class="fab fa-twitter text-sm"></i></a>
+            <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-text-muted hover:text-accent transition-all" style="border:1px solid rgba(0,212,255,0.14);"><i class="fab fa-linkedin-in text-sm"></i></a>
+            <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-text-muted hover:text-accent transition-all" style="border:1px solid rgba(0,212,255,0.14);"><i class="fab fa-github text-sm"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-space font-bold text-xs uppercase tracking-[0.18em] text-accent mb-6">Navigation</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html"    class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i> Home</a></li>
+            <li><a href="about.html"    class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i> About</a></li>
+            <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i> Services</a></li>
+            <li><a href="projects.html" class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i> Projects</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-space font-bold text-xs uppercase tracking-[0.18em] text-accent mb-6">Contact</h4>
+          <ul class="space-y-4">
+            <li><a href="https://wa.me/256702083515" class="flex items-center gap-3 text-text-secondary hover:text-accent transition-colors text-sm">
+              <span class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.2);"><i class="fab fa-whatsapp text-green-400 text-sm"></i></span>0702 083 515</a></li>
+            <li><a href="mailto:ibrixraxy@gmail.com" class="flex items-center gap-3 text-text-secondary hover:text-accent transition-colors text-sm">
+              <span class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(0,212,255,0.10);border:1px solid rgba(0,212,255,0.16);"><i class="fas fa-envelope text-accent text-sm"></i></span>ibrixraxy@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,255,0.20),transparent);"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center pt-8 gap-4">
+        <p class="text-text-muted text-xs font-space">&copy; 2026 RAXY TECH LABS. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-text-muted text-xs hover:text-accent transition-colors">Privacy Policy</a>
+          <a href="#" class="text-text-muted text-xs hover:text-accent transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+  <!-- === MODALS === -->
+
+  <!-- Raxy Modal -->
+  <div id="raxy-modal" class="modal-overlay px-4">
+    <div class="modal-content relative p-8 md:p-12">
+      <button class="modal-close"><i class="fas fa-times text-sm"></i></button>
+
+      <!-- Top accent line -->
+      <div class="absolute top-0 left-0 right-0 h-[2px]" style="background:linear-gradient(90deg,var(--accent),var(--emerald));border-radius:inherit;"></div>
+
+      <div class="flex flex-col md:flex-row gap-8 mb-8">
+        <div class="md:w-1/3 flex flex-col items-center md:items-start">
+          <div class="h-40 w-40 rounded-2xl overflow-hidden mb-4"
+               style="border:2px solid rgba(0,212,255,0.35);box-shadow:0 0 30px rgba(0,212,255,0.20);">
+            <img src="assets/images/Raxy.JPG" alt="Raxy" class="w-full h-full object-cover">
+          </div>
+          <div class="section-tag text-center">Founder</div>
+        </div>
+        <div class="md:w-2/3">
+          <h3 class="text-3xl font-bold font-space text-white mb-1">MULINDWA IBRAHIM</h3>
+          <p class="text-xs font-space font-bold uppercase tracking-widest mb-6 pb-4 border-b"
+             style="color:var(--accent);border-color:rgba(0,212,255,0.12);">RAXY &nbsp;·&nbsp; Raxy Tech Labs</p>
+          <p class="text-text-secondary leading-relaxed mb-4 text-sm">
+            Mulindwa Ibrahim is a self-taught technologist driven by curiosity, experimentation, and long-term vision.
+            He began exploring software, systems, and hardware not as a business — but as a way to understand how technology really works.
+          </p>
+          <p class="text-text-secondary leading-relaxed text-sm">
+            Without funding or formal backing, he focused on building first — learning through trial, failure, and iteration.
+            That mindset led to <strong style="color:var(--accent);">RAXY LABS</strong> — not a typical company, but a technology lab.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl border mb-8"
+           style="background:rgba(0,212,255,0.04);border-color:rgba(0,212,255,0.12);">
+        <h4 class="font-space font-bold text-white mb-4 flex items-center gap-2">
+          <i class="fas fa-flag-checkered text-sm" style="color:var(--accent);"></i> Key Milestones
+        </h4>
+        <ul class="space-y-3 text-text-secondary text-sm">
+          <li class="flex gap-3 items-start"><span style="color:var(--accent);flex-shrink:0;">&rsaquo;</span> Built and delivered real-world web platforms and payment integrations</li>
+          <li class="flex gap-3 items-start"><span style="color:var(--accent);flex-shrink:0;">&rsaquo;</span> Developed sell-ready systems such as POS and voting platforms</li>
+          <li class="flex gap-3 items-start"><span style="color:var(--accent);flex-shrink:0;">&rsaquo;</span> Created internal prototypes in smart systems and IoT</li>
+          <li class="flex gap-3 items-start"><span style="color:var(--accent);flex-shrink:0;">&rsaquo;</span> Planned long-term platforms including FX Journal and an Islamic digital platform</li>
+        </ul>
+      </div>
+
+      <p class="italic text-text-muted text-sm text-center border-t pt-6" style="border-color:rgba(0,212,255,0.10);">
+        "Mulindwa Ibrahim is not building for quick wins. He is engineering foundations — patiently, deliberately, and with scale in mind."
+      </p>
+    </div>
+  </div>
+
+  <!-- Roan Modal -->
+  <div id="roan-modal" class="modal-overlay px-4">
+    <div class="modal-content relative p-8 md:p-12 max-w-xl">
+      <button class="modal-close"><i class="fas fa-times text-sm"></i></button>
+      <div class="absolute top-0 left-0 right-0 h-[2px]" style="background:linear-gradient(90deg,#a78bfa,var(--accent));"></div>
+
+      <div class="text-center">
+        <div class="h-36 w-36 rounded-2xl overflow-hidden mb-5 mx-auto"
+             style="border:2px solid rgba(124,58,237,0.35);box-shadow:0 0 30px rgba(124,58,237,0.20);">
+          <img src="assets/images/Roan.jpg" alt="Roan" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-3xl font-bold font-space text-white mb-1">MUHOOZI ERIC</h3>
+        <p class="text-xs font-space font-bold uppercase tracking-widest mb-6 text-purple-400">ROAN &nbsp;·&nbsp; Executive</p>
+        <p class="text-text-secondary text-sm leading-relaxed">
+          Detailed profile coming soon. Muhoozi Eric brings strategic direction and business insight to the Raxy Labs team.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hive Modal -->
+  <div id="hive-modal" class="modal-overlay px-4">
+    <div class="modal-content relative p-8 md:p-12 max-w-xl">
+      <button class="modal-close"><i class="fas fa-times text-sm"></i></button>
+      <div class="absolute top-0 left-0 right-0 h-[2px]" style="background:linear-gradient(90deg,var(--emerald),var(--accent));"></div>
+
+      <div class="text-center">
+        <div class="h-36 w-36 rounded-2xl flex items-center justify-center mb-5 mx-auto"
+             style="background:linear-gradient(135deg,#0f2040,#060e1c);border:2px solid rgba(16,217,164,0.30);box-shadow:0 0 30px rgba(16,217,164,0.18);">
+          <span class="font-space font-bold text-4xl text-white">H</span>
+        </div>
+        <h3 class="text-3xl font-bold font-space text-white mb-1">NJUKI JOSEPH</h3>
+        <p class="text-xs font-space font-bold uppercase tracking-widest mb-6" style="color:var(--emerald);">HIVE &nbsp;·&nbsp; Executive</p>
+        <p class="text-text-secondary text-sm leading-relaxed">
+          Detailed profile coming soon. Njuki Joseph connects Raxy Labs with communities, creatives, and the broader African tech ecosystem.
+        </p>
+      </div>
+    </div>
+  </div>
+
 </body>
-
 </html>
