@@ -21,96 +21,109 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#0f2547',
-                        'primary-dark': '#091a33',
-                        'primary-light': '#1a3a6b',
-                        'accent-glow': 'rgba(0, 180, 216, 0.5)',
-                        'accent': '#00b4d8',
-                        'text-primary': '#e8edf5',
-                        'text-secondary': '#8b9dc3',
-                    },
-                    fontFamily: {
-                        'space': ['"Space Grotesk"', 'sans-serif'],
-                        'sans': ['"Outfit"', 'sans-serif'],
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                }
-            }
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary':        '#0a1628',
+            'primary-dark':   '#060e1c',
+            'primary-mid':    '#0f2040',
+            'primary-light':  '#162d55',
+            'accent':         '#00d4ff',
+            'accent-muted':   '#00a8cc',
+            'emerald':        '#10d9a4',
+            'violet':         '#7c3aed',
+            'text-primary':   '#edf2fb',
+            'text-secondary': '#8ea3c8',
+            'text-muted':     '#4d6080',
+          },
+          fontFamily: {
+            'space': ['"Space Grotesk"', 'sans-serif'],
+            'sans':  ['"Outfit"', 'sans-serif'],
+          },
         }
-    </script>
+      }
+    }
+  </script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css">
 
+
+  <style>
+    /* Image modal styles */
+    #image-modal {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+    #image-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    #modal-img {
+      max-height: 90vh;
+      max-width: 90vw;
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+    #image-modal.active #modal-img {
+      transform: scale(1);
+    }
+  </style>
 </head>
 
 <body class="text-text-primary overflow-x-hidden font-sans antialiased">
     <!-- Background Animation Canvas -->
-    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-30"></canvas>
+    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-60"></canvas>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-4 px-4 transition-all duration-300" id="navbar">
-        <div class="glass-panel container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
-            <a href="../index.html" class="flex items-center gap-2 group">
-                <img src="../assets/images/logo.png" alt="RAXY TECH LABS"
-                    class="h-10 w-auto object-contain transition-transform group-hover:scale-110 duration-300">
-                <span class="font-space font-bold text-xl tracking-wider hidden sm:block text-white">RAXY<span
-                        class="text-gradient">LABS</span></span>
-            </a>
+    
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 top-5 px-5 transition-all duration-500" id="navbar">
+    <div class="glass-panel container mx-auto px-6 py-3 flex justify-between items-center max-w-6xl"
+         style="border-radius:9999px;">
+      <a href="../index.html" class="flex items-center gap-3 group">
+        <img src="../assets/images/logo.png" alt="RAXY TECH LABS"
+          class="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-110">
+        <span class="font-space font-bold text-lg tracking-wide hidden sm:block text-white">
+          RAXY<span class="text-gradient">LABS</span>
+        </span>
+      </a>
 
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="../index.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Home</a>
-                <a href="../about.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">About</a>
-                <a href="../services.html"
-                    class="nav-link text-sm font-semibold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors">Services</a>
-                <a href="../projects.html"
-                    class="nav-link text-sm font-bold uppercase tracking-widest text-accent border-b-2 border-accent">Projects</a>
-                <a href="../contact.html"
-                    class="btn-primary text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
-                    Get in Touch
-                </a>
-            </div>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="../index.html"    class="nav-link">Home</a>
+        <a href="../about.html"    class="nav-link">About</a>
+        <a href="../services.html" class="nav-link">Services</a>
+        <a href="../projects.html" class="nav-link active">Projects</a>
+        <a href="../contact.html"  class="btn-primary text-sm">
+          Get in Touch <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
 
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-2xl text-accent hover:text-white transition-colors" id="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+      <button class="md:hidden text-xl text-accent hover:text-white transition-colors p-2" id="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
 
-        <!-- Mobile Menu -->
-        <div class="md:hidden glass-panel mt-2 mx-auto max-w-[95%] hidden" id="mobile-menu">
-            <div class="flex flex-col p-6 space-y-4 text-center">
-                <a href="../index.html" class="text-gray-300 hover:text-accent transition-colors">Home</a>
-                <a href="../about.html" class="text-gray-300 hover:text-accent transition-colors">About</a>
-                <a href="../services.html" class="text-gray-300 hover:text-accent transition-colors">Services</a>
-                <a href="../projects.html" class="text-accent font-bold">Projects</a>
-                <a href="../contact.html" class="btn-primary w-full inline-block">Contact Us</a>
-            </div>
-        </div>
-    </nav>
+    <div class="md:hidden glass-panel mt-3 mx-auto max-w-[94%] hidden" id="mobile-menu" style="border-radius:1.25rem;">
+      <div class="flex flex-col p-6 gap-4 text-center">
+        <a href="../index.html"    class="text-text-secondary hover:text-accent transition-colors text-sm uppercase tracking-widest font-semibold">Home</a>
+        <a href="../about.html"    class="text-text-secondary hover:text-accent transition-colors text-sm uppercase tracking-widest font-semibold">About</a>
+        <a href="../services.html" class="text-text-secondary hover:text-accent transition-colors text-sm uppercase tracking-widest font-semibold">Services</a>
+        <a href="../projects.html" class="text-accent font-bold font-space text-sm uppercase tracking-widest">Projects</a>
+        <hr class="glow-divider my-1">
+        <a href="../contact.html"  class="btn-primary w-full text-sm">Contact Us</a>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <section class="min-h-[60vh] flex items-end pb-20 relative pt-32 overflow-hidden">
-        <!-- Decorative Blobs -->
-        <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-b from-transparent to-white/90 z-0"></div>
-        <div
-            class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -z-10 animate-pulse-slow">
-        </div>
-
-        <div class="container mx-auto px-6 z-10 relative">
-            <a href="../projects.html"
-                class="inline-flex items-center text-text-secondary hover:text-primary mb-8 transition-colors group">
-                <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i> Back to Projects
-            </a>
+  <!-- Hero Section -->
+  <section class="min-h-[75vh] flex items-end pb-20 relative pt-36 overflow-hidden">
+    <!-- Banner Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/80 to-primary-dark/30 z-0"></div>
+    
+    <div class="container mx-auto px-6 z-10 relative reveal">
             <h1 class="text-5xl md:text-7xl font-bold mb-6 font-space text-primary">Cyber Decks</h1>
             <div class="flex flex-wrap items-center gap-4 text-sm font-mono font-bold text-accent">
                 <span class="px-3 py-1 bg-accent/10 rounded-full border border-accent/20">CONTROL</span>
@@ -125,7 +138,7 @@
         <div class="absolute inset-0 -z-20">
             <div class="absolute inset-0 -z-20">
                 <img src="../assets/images/cyber deck.jpg"
-                    class="w-full h-full object-cover opacity-20 filter grayscale hover:grayscale-0 transition-all duration-1000">
+                    class="w-full h-full object-cover opacity-60 transition-all duration-1000">
             </div>
         </div>
     </section>
@@ -275,24 +288,24 @@
     </section>
 
     <!-- Gallery Section -->
-    <section class="py-12 bg-white/30 border-t border-gray-200/50 backdrop-blur-sm">
+    <section class="py-12 ">
         <div class="container mx-auto px-6">
             <h3 class="text-xl font-bold mb-8 text-white font-space border-l-4 border-accent pl-4">Build Gallery
             </h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="rounded-2xl overflow-hidden glass-panel group p-2">
+                <div class="rounded-2xl overflow-hidden glass-panel group p-2 cursor-pointer gallery-item" data-src="../assets/images/cyberdeck.jpg">
                     <div class="overflow-hidden rounded-xl">
                         <img src="../assets/images/cyberdeck.jpg"
                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
                 </div>
-                <div class="rounded-2xl overflow-hidden glass-panel group p-2">
+                <div class="rounded-2xl overflow-hidden glass-panel group p-2 cursor-pointer gallery-item" data-src="../assets/images/cyberdeck.jpg">
                     <div class="overflow-hidden rounded-xl">
                         <img src="../assets/images/cyberdeck1.jpg"
                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
                 </div>
-                <div class="rounded-2xl overflow-hidden glass-panel group p-2">
+                <div class="rounded-2xl overflow-hidden glass-panel group p-2 cursor-pointer gallery-item" data-src="../assets/images/cyberdeck.jpg">
                     <div class="overflow-hidden rounded-xl">
                         <img src="../assets/images/cyberdeck2.jpg"
                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
@@ -302,76 +315,86 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="glass-panel mt-20 border-t border-accent/10">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-2">
-                    <a href="#"
-                        class="text-2xl font-bold font-space tracking-wider text-white flex items-center gap-2 mb-6">
-                        <img src="../assets/images/logo.png" class="h-8 w-auto opacity-80" alt="Logo">
-                        <span class="text-accent">RAXY</span><span class="text-cyan-300">LABS</span>
-                    </a>
-                    <p class="text-text-secondary leading-relaxed max-w-sm">
-                        Engineering the future of digital interaction. We build the impossible, one line of code at a
-                        time using cutting-edge technologies.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-accent font-bold font-space uppercase tracking-widest text-sm mb-6">Quick Links
-                    </h4>
-                    <ul class="space-y-3 text-text-secondary">
-                        <li><a href="../index.html"
-                                class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> Home</a></li>
-                        <li><a href="../about.html"
-                                class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> About</a></li>
-                        <li><a href="../services.html"
-                                class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> Services</a></li>
-                        <li><a href="../projects.html"
-                                class="hover:text-accent transition-colors flex items-center gap-2"><i
-                                    class="fas fa-chevron-right text-xs text-cyan-400"></i> Projects</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-accent font-bold font-space uppercase tracking-widest text-sm mb-6">Connect</h4>
-                    <ul class="space-y-3 text-text-secondary">
-                        <li><a href="https://wa.me/256702083515"
-                                class="hover:text-accent transition-colors flex items-center gap-3"><span
-                                    class="w-8 h-8 rounded-full bg-green-900/40 text-green-400 flex items-center justify-center"><i
-                                        class="fab fa-whatsapp"></i></span> 0702 083 515</a></li>
-                        <li><a href="mailto:ibrixraxy@gmail.com"
-                                class="hover:text-accent transition-colors flex items-center gap-3"><span
-                                    class="w-8 h-8 rounded-full bg-accent/10 text-accent flex items-center justify-center"><i
-                                        class="fas fa-envelope"></i></span> ibrixraxy@gmail.com</a></li>
-                    </ul>
-                    <div class="flex gap-4 mt-6">
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
-                                class="fab fa-twitter"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-secondary hover:text-accent hover:bg-accent/10 transition-all"><i
-                                class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="border-t border-accent/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-text-secondary">
-                <p>&copy; 2026 RAXY LABS. All rights reserved.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
-                </div>
-            </div>
+    
+  
+  <!-- Image Modal -->
+  <div id="image-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80" onclick="closeImageModal()">
+    <button class="absolute top-6 right-6 text-white hover:text-accent transition-colors text-2xl" onclick="closeImageModal()">
+      <i class="fas fa-times"></i>
+    </button>
+    <img id="modal-img" src="" alt="Gallery Image" class="rounded-xl shadow-2xl" onclick="event.stopPropagation()">
+  </div>
+
+  <!-- Footer -->
+  <footer class="relative mt-8 border-t" style="border-color:rgba(0,212,255,0.08);">
+    <div class="container mx-auto px-6 py-14 max-w-6xl">
+      <div class="grid md:grid-cols-4 gap-10 mb-12">
+        <div class="col-span-1 md:col-span-2">
+          <a href="../index.html" class="flex items-center gap-3 mb-5 w-fit">
+            <img src="../assets/images/logo.png" class="h-9 w-auto opacity-90" alt="Logo">
+            <span class="font-space font-bold text-xl text-white">RAXY<span class="text-gradient">LABS</span></span>
+          </a>
+          <p class="text-text-secondary text-sm leading-relaxed max-w-xs">
+            Engineering the future of digital interaction from Kampala. One line of code at a time, for Africa and beyond.
+          </p>
         </div>
-    </footer>
+        <div>
+          <h4 class="font-space font-bold text-xs uppercase tracking-[0.18em] text-accent mb-6">Navigation</h4>
+          <ul class="space-y-3">
+            <li><a href="../index.html"    class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i> Home</a></li>
+            <li><a href="../about.html"    class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i> About</a></li>
+            <li><a href="../services.html" class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i> Services</a></li>
+            <li><a href="../projects.html" class="footer-link"><i class="fas fa-chevron-right text-[10px] text-accent"></i> Projects</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-space font-bold text-xs uppercase tracking-[0.18em] text-accent mb-6">Contact</h4>
+          <ul class="space-y-4">
+            <li><a href="mailto:raxytechlabs@gmail.com" class="flex items-center gap-3 text-text-secondary hover:text-accent transition-colors text-sm">
+              <span class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(0,212,255,0.10);border:1px solid rgba(0,212,255,0.16);"><i class="fas fa-envelope text-accent text-sm"></i></span>raxytechlabs@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,255,0.20),transparent);"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center pt-8 gap-4">
+        <p class="text-text-muted text-xs font-space">&copy; 2026 RAXY TECH LABS. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
 
     <script src="../js/script.js"></script>
+
+  <script>
+    // Gallery Image Modal Logic
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const imageModal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const src = item.getAttribute('data-src');
+        if(src) {
+          modalImg.src = src;
+          imageModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    function closeImageModal() {
+      imageModal.classList.remove('active');
+      document.body.style.overflow = '';
+      setTimeout(() => { modalImg.src = ''; }, 300); // clear after animation
+    }
+    
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+        closeImageModal();
+      }
+    });
+  </script>
 </body>
 
 </html>
